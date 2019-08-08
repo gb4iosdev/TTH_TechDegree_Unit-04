@@ -400,7 +400,7 @@ class AccessArea {
         }
         
         //Record the swipe:
-        entrant.lastSwipeTimeStamp?[self.areaType] = Date()
+        //entrant.lastSwipeTimeStamp?[self.areaType] = Date()
         
         if entrant.pass.canAccessArea(self.areaType) {
             print("***SWIPE COMMENCED***")
