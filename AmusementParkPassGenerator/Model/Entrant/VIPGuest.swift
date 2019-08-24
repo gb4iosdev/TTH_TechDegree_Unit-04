@@ -9,16 +9,12 @@
 import Foundation
 
 class VIPGuest: Entrant {
-    
-    let pass: AmusementParkPass
+    let pass: Pass
     var entrantInformation: EntrantInformation? = nil
-    var lastSwipeTimeStamp: [Area : Date]? = nil
     
     init() {
-        self.pass = AmusementParkPass(
-            areaAccess: [Area.amusement],
-            discounts: [.food : 0.1, .merchandise : 0.2],
-            rideAccess: [.allRides, .skipLines]
+        self.pass = Pass (to: [Area.amusement],
+                          rides: [.allRides, .skipLines],discounts: [.food(0.1), .merchandise(0.2)]
         )
     }
 }

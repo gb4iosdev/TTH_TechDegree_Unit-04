@@ -11,7 +11,7 @@ import Foundation
 class HourlyEmployee: Entrant {
     
     var entrantInformation: EntrantInformation?
-    let pass: AmusementParkPass
+    let pass: Pass
     var lastSwipeTimeStamp: [Area : Date]? = nil
     
     init(ofType type: HourlyEmployeeType, entrantInformation information: EntrantInformation) throws {
@@ -35,11 +35,8 @@ class HourlyEmployee: Entrant {
             }
         }
         
-        self.pass = AmusementParkPass(
-            areaAccess: accessAreas,
-            discounts: [.food : 0.15, .merchandise : 0.25],
-            rideAccess: [.allRides]
-        )
+        self.pass = Pass(to: accessAreas, rides: [.allRides],
+                         discounts: [.food(0.15), .merchandise(0.25)], dateOfBirth: entrantInformation?.dateOfBirth)
     }
 }
 

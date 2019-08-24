@@ -9,15 +9,13 @@
 import Foundation
 
 class ClassicGuest: Entrant {
-    var pass: AmusementParkPass
+    var pass: Pass
     var entrantInformation: EntrantInformation? = nil
-    var lastSwipeTimeStamp: [Area : Date]? = nil
     
     init() {
-        self.pass = AmusementParkPass(
-            areaAccess: [Area.amusement],
-            discounts: nil,
-            rideAccess: [.allRides]
+        self.pass = Pass (to: [Area.amusement],
+                          rides: [.allRides]
         )
     }
 }
+

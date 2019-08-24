@@ -8,8 +8,16 @@
 
 import Foundation
 
-protocol Pass {
-    var areaAccess: Set<Area> { get }
-    var discounts: [DiscountOn : Double]? { get }
-    var rideAccess: Set<RideAccessType> { get }
+class Pass {
+    var areaAccess: Set<Area>
+    var rideAccess: Set<RideAccessType>
+    var discounts: [Discount]?
+    var entrantDateOfBirth: Date?
+    
+    init(to areas: Set<Area>, rides: Set<RideAccessType>, discounts:[Discount]? = nil, dateOfBirth: Date? = nil) {
+        areaAccess = areas
+        rideAccess = rides
+        self.discounts = discounts
+        entrantDateOfBirth = dateOfBirth
+    }
 }

@@ -11,8 +11,7 @@ import Foundation
 class Manager: Entrant {
     
     var entrantInformation: EntrantInformation?
-    let pass: AmusementParkPass
-    var lastSwipeTimeStamp: [Area : Date]? = nil
+    let pass: Pass
     
     var managementTier: ManagementTier
     
@@ -30,10 +29,8 @@ class Manager: Entrant {
         self.entrantInformation = information
         self.managementTier = tier
         
-        self.pass = AmusementParkPass(
-            areaAccess: Set(Area.allCases),
-            discounts: [.food : 0.25, .merchandise : 0.25],
-            rideAccess: [.allRides]
+        self.pass = Pass(to: Set(Area.allCases),
+                         rides: [.allRides], discounts: [.food(0.25), .merchandise(0.25)], dateOfBirth: entrantInformation?.dateOfBirth
         )
     }
 }
