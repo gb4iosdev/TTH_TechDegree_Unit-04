@@ -12,12 +12,10 @@ class Pass {
     var areaAccess: Set<Area>
     var rideAccess: Set<RideAccessType>
     var discounts: [Discount]?
-    var entrantDateOfBirth: Date?
     
-    init(to areas: Set<Area>, rides: Set<RideAccessType>, discounts:[Discount]? = nil, dateOfBirth: Date? = nil) {
+    init(to areas: Set<Area>, rides: Set<RideAccessType>, discounts:[Discount]? = nil) {
         areaAccess = areas
         rideAccess = rides
         self.discounts = discounts
-        entrantDateOfBirth = dateOfBirth
     }
 }

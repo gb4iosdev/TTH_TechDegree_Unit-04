@@ -30,7 +30,7 @@ class FreeChildGuest: Entrant {
         self.entrantInformation = information
         
         self.pass = Pass(to: [Area.amusement],
-                         rides: [.allRides], dateOfBirth: entrantInformation?.dateOfBirth)
+                         rides: [.allRides])
     }
 }
 

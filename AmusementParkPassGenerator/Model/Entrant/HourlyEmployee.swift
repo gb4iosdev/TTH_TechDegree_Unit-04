@@ -36,7 +36,7 @@ class HourlyEmployee: Entrant {
         }
         
         self.pass = Pass(to: accessAreas, rides: [.allRides],
-                         discounts: [.food(0.15), .merchandise(0.25)], dateOfBirth: entrantInformation?.dateOfBirth)
+                         discounts: [.food(0.15), .merchandise(0.25)])
     }
 }
 

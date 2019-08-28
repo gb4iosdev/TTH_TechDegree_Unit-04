@@ -26,10 +26,8 @@
 		861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623222FBA66700C4CC26 /* HourlyEmployee.swift */; };
 		861D623522FBA6BA00C4CC26 /* ManagementTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623422FBA6BA00C4CC26 /* ManagementTier.swift */; };
 		861D623722FBA6E200C4CC26 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623622FBA6E200C4CC26 /* Manager.swift */; };
+		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
-		86BB27D9230D4C0D00AF8802 /* AccessPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D8230D4C0D00AF8802 /* AccessPoint.swift */; };
-		86BB27DB230D4C3C00AF8802 /* RideTurnstile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27DA230D4C3C00AF8802 /* RideTurnstile.swift */; };
-		86BB27DD230D4C6800AF8802 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27DC230D4C6800AF8802 /* Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +52,8 @@
 		861D623222FBA66700C4CC26 /* HourlyEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployee.swift; sourceTree = "<group>"; };
 		861D623422FBA6BA00C4CC26 /* ManagementTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementTier.swift; sourceTree = "<group>"; };
 		861D623622FBA6E200C4CC26 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
-		86BB27D8230D4C0D00AF8802 /* AccessPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPoint.swift; sourceTree = "<group>"; };
-		86BB27DA230D4C3C00AF8802 /* RideTurnstile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTurnstile.swift; sourceTree = "<group>"; };
-		86BB27DC230D4C6800AF8802 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +88,7 @@
 			children = (
 				861B439922EDB44400081CF7 /* AppDelegate.swift */,
 				861B439B22EDB44400081CF7 /* ViewController.swift */,
+				8664B15B2315F7EF00654B61 /* TestManager.swift */,
 				861B439D22EDB44400081CF7 /* Main.storyboard */,
 				861D621622FBA22600C4CC26 /* Model */,
 				861B43A022EDB44600081CF7 /* Assets.xcassets */,
@@ -151,9 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				86BB27D6230D4BC200AF8802 /* Checkpoint.swift */,
-				86BB27D8230D4C0D00AF8802 /* AccessPoint.swift */,
-				86BB27DA230D4C3C00AF8802 /* RideTurnstile.swift */,
-				86BB27DC230D4C6800AF8802 /* Register.swift */,
 			);
 			path = Checkpoint;
 			sourceTree = "<group>";
@@ -234,7 +228,6 @@
 				861D622122FBA3D200C4CC26 /* Discount.swift in Sources */,
 				861D621E22FBA37D00C4CC26 /* EntrantInformation.swift in Sources */,
 				861D621C22FBA2C900C4CC26 /* InformationError.swift in Sources */,
-				86BB27D9230D4C0D00AF8802 /* AccessPoint.swift in Sources */,
 				861D622522FBA44700C4CC26 /* Pass.swift in Sources */,
 				861D623122FBA61300C4CC26 /* FreeChildGuest.swift in Sources */,
 				861B439C22EDB44400081CF7 /* ViewController.swift in Sources */,
@@ -242,11 +235,10 @@
 				861B439A22EDB44400081CF7 /* AppDelegate.swift in Sources */,
 				86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */,
 				861D622922FBA4DA00C4CC26 /* Entrant.swift in Sources */,
+				8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */,
 				861D622B22FBA52300C4CC26 /* Area.swift in Sources */,
 				861D622322FBA40B00C4CC26 /* RideAccessType.swift in Sources */,
-				86BB27DB230D4C3C00AF8802 /* RideTurnstile.swift in Sources */,
 				861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */,
-				86BB27DD230D4C6800AF8802 /* Register.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,
 			);
