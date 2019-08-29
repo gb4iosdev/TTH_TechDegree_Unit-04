@@ -17,7 +17,7 @@ enum CheckpointType {
 class Checkpoint {
     let checkpointType: CheckpointType
     var area: Area?
-    typealias PassID = Int
+    typealias PassID = String
     let minimumSwipeInterval = 5.0
     var swipeHistory: [PassID : Date] = [:]
     
@@ -32,15 +32,14 @@ class Checkpoint {
     }
     
     func swipeAllowed(for pass: Pass) -> Bool {
-        //Check if swiped too soon:
-        let passID = ObjectIdentifier(pass).hashValue
         
-        if let lastSwipeTime = swipeHistory[passID], Date().timeIntervalSince(lastSwipeTime) < minimumSwipeInterval {
-            dump(swipeHistory)
+        //Check if swiped too soon:
+        
+        if let lastSwipeTime = swipeHistory[pass.uuid], Date().timeIntervalSince(lastSwipeTime) < minimumSwipeInterval {
             return false
         }  else {
             //Record the swipe:
-            swipeHistory[passID] = Date()
+            swipeHistory[pass.uuid] = Date()
             return true
         }
     }

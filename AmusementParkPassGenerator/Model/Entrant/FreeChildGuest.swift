@@ -31,6 +31,7 @@ class FreeChildGuest: Entrant {
         
         self.pass = Pass(to: [Area.amusement],
                          rides: [.allRides])
+
     }
 }
 
