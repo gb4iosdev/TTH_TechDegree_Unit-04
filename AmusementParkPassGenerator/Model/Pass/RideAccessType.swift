@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum RideAccessType {
+enum RideAccess {
     case allRides
     case skipLines
+    case noRideAccess
 }

@@ -12,7 +12,6 @@ class HourlyEmployee: Entrant {
     
     var entrantInformation: EntrantInformation?
     let pass: Pass
-    var lastSwipeTimeStamp: [Area : Date]? = nil
     
     init(ofType type: HourlyEmployeeType, entrantInformation information: EntrantInformation) throws {
         guard information.firstName != nil, information.lastName != nil else {

@@ -29,6 +29,12 @@
 		86344B802318A54600A07184 /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86344B7F2318A54600A07184 /* ProjectDataSource.swift */; };
 		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
+		86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */; };
+		86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC22318A6890042FA99 /* VendorCompany.swift */; };
+		86C26DC52318A6D40042FA99 /* Contractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC42318A6D40042FA99 /* Contractor.swift */; };
+		86C26DC72318A82D0042FA99 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC62318A82D0042FA99 /* Vendor.swift */; };
+		86C26DC92318AAE60042FA99 /* SeasonPassGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC82318AAE60042FA99 /* SeasonPassGuest.swift */; };
+		86C26DCB2318AB0D0042FA99 /* SeniorGuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DCA2318AB0D0042FA99 /* SeniorGuest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,12 @@
 		86344B7F2318A54600A07184 /* ProjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
+		86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompanyDataSource.swift; sourceTree = "<group>"; };
+		86C26DC22318A6890042FA99 /* VendorCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompany.swift; sourceTree = "<group>"; };
+		86C26DC42318A6D40042FA99 /* Contractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contractor.swift; sourceTree = "<group>"; };
+		86C26DC62318A82D0042FA99 /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
+		86C26DC82318AAE60042FA99 /* SeasonPassGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonPassGuest.swift; sourceTree = "<group>"; };
+		86C26DCA2318AB0D0042FA99 /* SeniorGuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorGuest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +133,14 @@
 				861D622E22FBA5F200C4CC26 /* VIPGuest.swift */,
 				861D623022FBA61300C4CC26 /* FreeChildGuest.swift */,
 				861D623622FBA6E200C4CC26 /* Manager.swift */,
+				86C26DC82318AAE60042FA99 /* SeasonPassGuest.swift */,
+				86C26DC42318A6D40042FA99 /* Contractor.swift */,
+				86C26DCA2318AB0D0042FA99 /* SeniorGuest.swift */,
+				86C26DC62318A82D0042FA99 /* Vendor.swift */,
 				861D623222FBA66700C4CC26 /* HourlyEmployee.swift */,
 				861D621822FBA25D00C4CC26 /* HourlyEmployeeType.swift */,
 				861D623422FBA6BA00C4CC26 /* ManagementTier.swift */,
+				86C26DC22318A6890042FA99 /* VendorCompany.swift */,
 			);
 			path = Entrant;
 			sourceTree = "<group>";
@@ -151,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				86344B7F2318A54600A07184 /* ProjectDataSource.swift */,
+				86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -246,11 +264,17 @@
 				861D622F22FBA5F200C4CC26 /* VIPGuest.swift in Sources */,
 				861B439A22EDB44400081CF7 /* AppDelegate.swift in Sources */,
 				86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */,
+				86C26DC52318A6D40042FA99 /* Contractor.swift in Sources */,
 				861D622922FBA4DA00C4CC26 /* Entrant.swift in Sources */,
 				8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */,
 				861D622B22FBA52300C4CC26 /* Area.swift in Sources */,
+				86C26DC92318AAE60042FA99 /* SeasonPassGuest.swift in Sources */,
 				861D622322FBA40B00C4CC26 /* RideAccessType.swift in Sources */,
+				86C26DC72318A82D0042FA99 /* Vendor.swift in Sources */,
+				86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */,
+				86C26DCB2318AB0D0042FA99 /* SeniorGuest.swift in Sources */,
 				861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */,
+				86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,
 			);

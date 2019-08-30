@@ -10,11 +10,11 @@ import Foundation
 
 class Pass {
     var areaAccess: Set<Area>
-    var rideAccess: Set<RideAccessType>
+    var rideAccess: Set<RideAccess>
     var discounts: [Discount]?
     var uuid: String
     
-    init(to areas: Set<Area>, rides: Set<RideAccessType>, discounts:[Discount]? = nil) {
+    init(to areas: Set<Area>, rides: Set<RideAccess>, discounts:[Discount]? = nil) {
         areaAccess = areas
         rideAccess = rides
         self.discounts = discounts

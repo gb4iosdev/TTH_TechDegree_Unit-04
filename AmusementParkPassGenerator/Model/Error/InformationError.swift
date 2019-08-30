@@ -13,4 +13,6 @@ enum InformationError: Error {
     case missingNameInformation(detail: String)
     case missingAddressInformation(detail: String)
     case missingSocialSecurityNumber(detail: String)
+    case invalidProject(detail: String)
+    case invalidVendorCompany(detail: String)
 }

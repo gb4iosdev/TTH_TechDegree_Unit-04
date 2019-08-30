@@ -191,6 +191,10 @@ extension TestManager {
                 print(errDetail)
             case .missingSocialSecurityNumber(let errDetail):
                 print(errDetail)
+            case .invalidProject(let errDetail):
+                print(errDetail)
+            case .invalidVendorCompany(let errDetail):
+                print(errDetail)
             }
         } else {
             print("Unknown error")
