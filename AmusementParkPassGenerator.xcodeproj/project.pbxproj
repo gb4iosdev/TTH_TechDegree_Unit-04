@@ -26,6 +26,7 @@
 		861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623222FBA66700C4CC26 /* HourlyEmployee.swift */; };
 		861D623522FBA6BA00C4CC26 /* ManagementTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623422FBA6BA00C4CC26 /* ManagementTier.swift */; };
 		861D623722FBA6E200C4CC26 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623622FBA6E200C4CC26 /* Manager.swift */; };
+		86344B802318A54600A07184 /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86344B7F2318A54600A07184 /* ProjectDataSource.swift */; };
 		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		861D623222FBA66700C4CC26 /* HourlyEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployee.swift; sourceTree = "<group>"; };
 		861D623422FBA6BA00C4CC26 /* ManagementTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementTier.swift; sourceTree = "<group>"; };
 		861D623622FBA6E200C4CC26 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		86344B7F2318A54600A07184 /* ProjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				861D621722FBA23400C4CC26 /* Entrant */,
+				86344B7E2318A51900A07184 /* DataSource */,
 				861D621F22FBA3BF00C4CC26 /* Pass */,
 				86BB27D5230D4BAB00AF8802 /* Checkpoint */,
 				861D621A22FBA2A400C4CC26 /* Error */,
@@ -142,6 +145,14 @@
 				861D622222FBA40B00C4CC26 /* RideAccessType.swift */,
 			);
 			path = Pass;
+			sourceTree = "<group>";
+		};
+		86344B7E2318A51900A07184 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				86344B7F2318A54600A07184 /* ProjectDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		86BB27D5230D4BAB00AF8802 /* Checkpoint */ = {
@@ -224,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				861D623522FBA6BA00C4CC26 /* ManagementTier.swift in Sources */,
+				86344B802318A54600A07184 /* ProjectDataSource.swift in Sources */,
 				861D621922FBA25D00C4CC26 /* HourlyEmployeeType.swift in Sources */,
 				861D622122FBA3D200C4CC26 /* Discount.swift in Sources */,
 				861D621E22FBA37D00C4CC26 /* EntrantInformation.swift in Sources */,
