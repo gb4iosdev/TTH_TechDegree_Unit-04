@@ -14,9 +14,16 @@ class ViewController: UIViewController {
     
     @IBOutlet var entrantTypeButtons: [UIButton]!
     @IBOutlet weak var entrantSubTypeStackView: UIStackView!
+    @IBOutlet weak var companyPicker: UIPickerView!
+    @IBOutlet weak var projectPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        companyPicker.delegate = self
+        companyPicker.dataSource = self
+        projectPicker.delegate = self
+        projectPicker.dataSource = self
         
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //            self.entrantTypeButtons[0].isHidden = true
@@ -100,6 +107,38 @@ class ViewController: UIViewController {
             }
         }
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22.0)
+        
+    }
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView === projectPicker {
+            return ProjectDataSource.projects.count
+        }
+        
+        if pickerView === companyPicker {
+            return VendorCompany.allCases.count
+        }
+        
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if pickerView === projectPicker {
+            return String(ProjectDataSource.projects[row])
+        }
+        
+        if pickerView === companyPicker {
+            return VendorCompany.allCasesAsStrings()[row]
+        }
+        
+        return nil
         
     }
 }

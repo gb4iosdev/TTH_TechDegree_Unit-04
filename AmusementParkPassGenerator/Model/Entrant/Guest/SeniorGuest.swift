@@ -15,7 +15,7 @@ class seniorGuest: Entrant {
     
     init(entrantInformation information: EntrantInformation) throws {
         guard information.firstName != nil, information.lastName != nil else {
-            throw InformationError.missingNameInformation(detail: "Missing Name information for Season Pass Guest")
+            throw InformationError.missingNameInformation(detail: "Missing Name information for Senior Guest")
         }
         
         self.entrantInformation = information

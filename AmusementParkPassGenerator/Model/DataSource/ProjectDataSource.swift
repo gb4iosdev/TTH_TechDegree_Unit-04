@@ -9,8 +9,15 @@
 import Foundation
 
 struct ProjectDataSource {
+    static let projects: [Int] = [
+        1001,
+        1002,
+        1003,
+        2001,
+        2002
+    ]
     static let accessAreas: [Int : Set<Area>] = [
-        1001 : [.amusement, .rideControl],
+        1001: [.amusement, .rideControl],
         1002: [.amusement, .rideControl, .maintenance],
         1003: [.amusement, .rideControl, .kitchen, .maintenance, .office],
         2001: [.office],

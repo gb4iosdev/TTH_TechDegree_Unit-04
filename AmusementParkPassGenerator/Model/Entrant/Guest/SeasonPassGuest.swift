@@ -18,7 +18,7 @@ class SeasonPassGuest: Entrant {
             throw InformationError.missingNameInformation(detail: "Missing Name information for Season Pass Guest")
         }
         guard information.streetAddress != nil, information.city != nil, information.state != nil, information.zipCode != nil else {
-            throw InformationError.missingAddressInformation(detail: "Missing Address information for contractor")
+            throw InformationError.missingAddressInformation(detail: "Missing Address information for Season Pass Guest")
         }
         
         self.entrantInformation = information
