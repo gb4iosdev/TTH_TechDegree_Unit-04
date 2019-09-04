@@ -30,6 +30,8 @@
 		863D9DB6231BF51E0060CB36 /* EntrantSubTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */; };
 		863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */; };
 		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
+		86901F51231EFD2E001ECD69 /* PassanCodeTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */; };
+		86901F53231F2821001ECD69 /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F52231F2821001ECD69 /* InputValidation.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
 		86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */; };
 		86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC22318A6890042FA99 /* VendorCompany.swift */; };
@@ -65,6 +67,8 @@
 		863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubTypeButton.swift; sourceTree = "<group>"; };
 		863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubType.swift; sourceTree = "<group>"; };
 		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
+		86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassanCodeTemp.swift; sourceTree = "<group>"; };
+		86901F52231F2821001ECD69 /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompanyDataSource.swift; sourceTree = "<group>"; };
 		86C26DC22318A6890042FA99 /* VendorCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompany.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			children = (
 				861B439922EDB44400081CF7 /* AppDelegate.swift */,
 				861B439D22EDB44400081CF7 /* Main.storyboard */,
+				86901F52231F2821001ECD69 /* InputValidation.swift */,
+				86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */,
 				863D9DB3231BF3590060CB36 /* Controller */,
 				863D9DB4231BF4F10060CB36 /* View */,
 				861D621622FBA22600C4CC26 /* Model */,
@@ -340,7 +346,9 @@
 				861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */,
 				86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
+				86901F51231EFD2E001ECD69 /* PassanCodeTemp.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,
+				86901F53231F2821001ECD69 /* InputValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

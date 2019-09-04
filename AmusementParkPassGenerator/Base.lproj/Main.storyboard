@@ -108,7 +108,7 @@
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-y3-skz" userLabel="Date of Birth Picker">
                                                         <rect key="frame" x="0.0" y="37.5" width="320" height="55"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="PCG-GP-cah"/>
                                                         </constraints>
@@ -127,14 +127,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="###-##-####" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="suH-ms-gKV" userLabel="SSN Text Field">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="###-##-####" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="suH-ms-gKV" userLabel="SSN Text Field">
                                                         <rect key="frame" x="0.0" y="37.5" width="339" height="55"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="mCv-Jm-nlz"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -199,6 +199,7 @@
                                                     </label>
                                                     <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="vjN-VJ-Qih" userLabel="Company Picker View">
                                                         <rect key="frame" x="0.0" y="23" width="320" height="100"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="dv6-Ea-yCf"/>
                                                         </constraints>
@@ -216,6 +217,7 @@
                                                     </label>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-YG-CRT" userLabel="Project Picker View">
                                                         <rect key="frame" x="0.0" y="23" width="320" height="100"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="vmA-GB-iaP"/>
                                                         </constraints>
@@ -376,8 +378,11 @@
                     </view>
                     <connections>
                         <outlet property="companyPicker" destination="vjN-VJ-Qih" id="8n3-xa-AlN"/>
+                        <outlet property="datePicker" destination="tSC-y3-skz" id="akf-hD-HFN"/>
                         <outlet property="entrantSubTypeStackView" destination="Q66-3g-H4Y" id="uYc-rm-5Jg"/>
                         <outlet property="projectPicker" destination="lap-YG-CRT" id="G8L-KG-AyU"/>
+                        <outlet property="ssnTextField" destination="suH-ms-gKV" id="ENm-gP-3Tf"/>
+                        <outlet property="zipCodeTextField" destination="aDV-px-Gpb" id="4QD-Eb-Hh3"/>
                         <outletCollection property="entrantTypeButtons" destination="biy-UU-RVC" collectionClass="NSMutableArray" id="Nch-dz-NqQ"/>
                         <outletCollection property="entrantTypeButtons" destination="z6Y-le-Z3C" collectionClass="NSMutableArray" id="uhJ-Rj-TMy"/>
                         <outletCollection property="entrantTypeButtons" destination="2m2-LK-n2T" collectionClass="NSMutableArray" id="HM9-uS-X7B"/>
