@@ -21,76 +21,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen1Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="xK1-dy-w1o">
                                 <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j8q-Ch-kk9" userLabel="EntrantType">
-                                <rect key="frame" x="8" y="20" width="752" height="70"/>
-                                <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6Y-le-Z3C">
-                                        <rect key="frame" x="0.0" y="0.0" width="150.5" height="70"/>
-                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Guest">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WCm-4K-J7G"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biy-UU-RVC">
-                                        <rect key="frame" x="150.5" y="0.0" width="150.5" height="70"/>
-                                        <color key="backgroundColor" red="0.54288762810000002" green="0.42922091480000002" blue="0.66512626409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Employee">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81I-4J-RlY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m2-LK-n2T">
-                                        <rect key="frame" x="301" y="0.0" width="150" height="70"/>
-                                        <color key="backgroundColor" red="1" green="0.56723805670000005" blue="0.75722464310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Manager">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhN-aS-HBZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-LV-mNQ">
-                                        <rect key="frame" x="451" y="0.0" width="150.5" height="70"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Contractor">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ILB-3f-5xJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acI-7N-r4N">
-                                        <rect key="frame" x="601.5" y="0.0" width="150.5" height="70"/>
-                                        <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Vendor">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9S-h9-FhI"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="IfI-rk-7ac"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3g-H4Y" userLabel="EntrantSubType">
-                                <rect key="frame" x="8" y="90" width="752" height="55"/>
-                                <color key="backgroundColor" red="1" green="0.98538764940000001" blue="0.052803751849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="TNB-uZ-jab"/>
-                                </constraints>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="BvM-SK-UIz" userLabel="Main StackView">
                                 <rect key="frame" x="35" y="167" width="698" height="683.5"/>
                                 <subviews>
@@ -103,7 +33,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCR-zW-cLo">
                                                         <rect key="frame" x="0.0" y="0.0" width="107" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-y3-skz" userLabel="Date of Birth Picker">
@@ -305,7 +235,10 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="AMQ-wk-1y8"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -314,6 +247,76 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="n8E-rM-Z7w" firstAttribute="width" secondItem="BvM-SK-UIz" secondAttribute="width" id="Zdg-N3-PO9"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j8q-Ch-kk9" userLabel="EntrantType">
+                                <rect key="frame" x="8" y="20" width="752" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6Y-le-Z3C">
+                                        <rect key="frame" x="0.0" y="0.0" width="150.5" height="70"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Guest">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WCm-4K-J7G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biy-UU-RVC">
+                                        <rect key="frame" x="150.5" y="0.0" width="150.5" height="70"/>
+                                        <color key="backgroundColor" red="0.54288762810000002" green="0.42922091480000002" blue="0.66512626409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Employee">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81I-4J-RlY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m2-LK-n2T">
+                                        <rect key="frame" x="301" y="0.0" width="150" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.56723805670000005" blue="0.75722464310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Manager">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhN-aS-HBZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-LV-mNQ">
+                                        <rect key="frame" x="451" y="0.0" width="150.5" height="70"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Contractor">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ILB-3f-5xJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acI-7N-r4N">
+                                        <rect key="frame" x="601.5" y="0.0" width="150.5" height="70"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.47450980390000003" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Vendor">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="entrantTypeSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9S-h9-FhI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="IfI-rk-7ac"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3g-H4Y" userLabel="EntrantSubType">
+                                <rect key="frame" x="8" y="90" width="752" height="55"/>
+                                <color key="backgroundColor" red="1" green="0.98538764940000001" blue="0.052803751849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="TNB-uZ-jab"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="eUD-VW-STk" userLabel="Lower Buttons StackView">
@@ -334,6 +337,9 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="generatePassbuttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4j-xR-sNX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9N-0b-v5x">
                                         <rect key="frame" x="369" y="0.0" width="329" height="60"/>
@@ -377,17 +383,54 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cityGroup" destination="2ZV-Zx-j0s" id="8GW-1M-UeO"/>
+                        <outlet property="cityTextField" destination="paL-HW-1e9" id="EFR-Xm-3Vx"/>
                         <outlet property="companyPicker" destination="vjN-VJ-Qih" id="8n3-xa-AlN"/>
+                        <outlet property="companyPickerGroup" destination="noK-E5-3jH" id="GV8-wp-LWL"/>
                         <outlet property="datePicker" destination="tSC-y3-skz" id="akf-hD-HFN"/>
+                        <outlet property="datePickerGroup" destination="4OF-cj-q4H" id="xYx-UL-gNO"/>
                         <outlet property="entrantSubTypeStackView" destination="Q66-3g-H4Y" id="uYc-rm-5Jg"/>
+                        <outlet property="firstNameGroup" destination="RzK-d4-qp2" id="KLY-rk-t6D"/>
+                        <outlet property="firstNameTextField" destination="Uhj-nm-tSp" id="8mx-Sa-xbP"/>
+                        <outlet property="lastNameGroup" destination="zWE-0K-1oY" id="aGC-om-Gwy"/>
+                        <outlet property="lastNameTextField" destination="eiG-8W-dSH" id="sIC-dk-tO4"/>
+                        <outlet property="mainStackViewBottomConstraint" destination="WR2-NT-itE" id="Tbe-6V-YnS"/>
+                        <outlet property="mainStackViewTopConstraint" destination="BE5-fv-8nR" id="NMg-nt-FNE"/>
                         <outlet property="projectPicker" destination="lap-YG-CRT" id="G8L-KG-AyU"/>
+                        <outlet property="projectPickerGroup" destination="jaN-24-dyM" id="2ZQ-0p-S8q"/>
+                        <outlet property="ssnGroup" destination="K7m-yC-JcI" id="lo6-wT-1kv"/>
                         <outlet property="ssnTextField" destination="suH-ms-gKV" id="ENm-gP-3Tf"/>
+                        <outlet property="stateGroup" destination="ZLP-rG-uQ8" id="HR3-AI-iNi"/>
+                        <outlet property="stateTextField" destination="aOr-Xv-bUR" id="72h-zY-G11"/>
+                        <outlet property="streetAddressGroup" destination="UXv-Mv-czJ" id="FWf-g8-UiK"/>
+                        <outlet property="streetAddressTextField" destination="n8E-rM-Z7w" id="AVL-6s-ie2"/>
+                        <outlet property="zipCodeGroup" destination="SE5-Sz-cKF" id="rCL-5o-hEU"/>
                         <outlet property="zipCodeTextField" destination="aDV-px-Gpb" id="4QD-Eb-Hh3"/>
                         <outletCollection property="entrantTypeButtons" destination="biy-UU-RVC" collectionClass="NSMutableArray" id="Nch-dz-NqQ"/>
                         <outletCollection property="entrantTypeButtons" destination="z6Y-le-Z3C" collectionClass="NSMutableArray" id="uhJ-Rj-TMy"/>
                         <outletCollection property="entrantTypeButtons" destination="2m2-LK-n2T" collectionClass="NSMutableArray" id="HM9-uS-X7B"/>
                         <outletCollection property="entrantTypeButtons" destination="acI-7N-r4N" collectionClass="NSMutableArray" id="fK9-lJ-uK9"/>
                         <outletCollection property="entrantTypeButtons" destination="RHr-LV-mNQ" collectionClass="NSMutableArray" id="Tgq-im-52H"/>
+                        <outletCollection property="allFields" destination="tSC-y3-skz" collectionClass="NSMutableArray" id="8Ee-cn-AmF"/>
+                        <outletCollection property="allFields" destination="suH-ms-gKV" collectionClass="NSMutableArray" id="ymB-dk-iuf"/>
+                        <outletCollection property="allFields" destination="Uhj-nm-tSp" collectionClass="NSMutableArray" id="wPY-An-WGd"/>
+                        <outletCollection property="allFields" destination="eiG-8W-dSH" collectionClass="NSMutableArray" id="BD3-6t-PkD"/>
+                        <outletCollection property="allFields" destination="vjN-VJ-Qih" collectionClass="NSMutableArray" id="wTG-DP-aml"/>
+                        <outletCollection property="allFields" destination="lap-YG-CRT" collectionClass="NSMutableArray" id="xml-iK-9Lm"/>
+                        <outletCollection property="allFields" destination="n8E-rM-Z7w" collectionClass="NSMutableArray" id="uaj-ke-Mjr"/>
+                        <outletCollection property="allFields" destination="paL-HW-1e9" collectionClass="NSMutableArray" id="3kN-9P-V8r"/>
+                        <outletCollection property="allFields" destination="aOr-Xv-bUR" collectionClass="NSMutableArray" id="JTi-uw-Fkc"/>
+                        <outletCollection property="allFields" destination="aDV-px-Gpb" collectionClass="NSMutableArray" id="1Tp-3L-djv"/>
+                        <outletCollection property="allFieldGroups" destination="4OF-cj-q4H" collectionClass="NSMutableArray" id="IWj-zr-asA"/>
+                        <outletCollection property="allFieldGroups" destination="K7m-yC-JcI" collectionClass="NSMutableArray" id="AYi-GM-zOZ"/>
+                        <outletCollection property="allFieldGroups" destination="RzK-d4-qp2" collectionClass="NSMutableArray" id="Y0O-Yv-edR"/>
+                        <outletCollection property="allFieldGroups" destination="zWE-0K-1oY" collectionClass="NSMutableArray" id="acf-eD-4ZE"/>
+                        <outletCollection property="allFieldGroups" destination="noK-E5-3jH" collectionClass="NSMutableArray" id="jVR-3J-nXg"/>
+                        <outletCollection property="allFieldGroups" destination="jaN-24-dyM" collectionClass="NSMutableArray" id="GOe-EQ-yoq"/>
+                        <outletCollection property="allFieldGroups" destination="UXv-Mv-czJ" collectionClass="NSMutableArray" id="jhu-sA-Md7"/>
+                        <outletCollection property="allFieldGroups" destination="2ZV-Zx-j0s" collectionClass="NSMutableArray" id="5dA-V5-0sH"/>
+                        <outletCollection property="allFieldGroups" destination="ZLP-rG-uQ8" collectionClass="NSMutableArray" id="3Vr-Uz-b4f"/>
+                        <outletCollection property="allFieldGroups" destination="SE5-Sz-cKF" collectionClass="NSMutableArray" id="OjQ-EW-oK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

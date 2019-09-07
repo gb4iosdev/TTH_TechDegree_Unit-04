@@ -10,7 +10,15 @@ import UIKit
 
 class EntrantSubTypeButton: UIButton {
 
-    var classToGenerate: EntrantSubType?
+    var entrantSubType: EntrantSubType
     
-
+    init(entrantSubType: EntrantSubType) {
+        self.entrantSubType = entrantSubType
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
