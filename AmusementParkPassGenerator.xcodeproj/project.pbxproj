@@ -29,6 +29,9 @@
 		86344B802318A54600A07184 /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86344B7F2318A54600A07184 /* ProjectDataSource.swift */; };
 		863D9DB6231BF51E0060CB36 /* EntrantSubTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */; };
 		863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */; };
+		866461A32323CB8F00051600 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A22323CB8F00051600 /* Extensions.swift */; };
+		866461A52324715C00051600 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A42324715C00051600 /* Field.swift */; };
+		866461A7232471B400051600 /* EntrantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A6232471B400051600 /* EntrantType.swift */; };
 		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
 		86901F51231EFD2E001ECD69 /* PassanCodeTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */; };
 		86901F53231F2821001ECD69 /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F52231F2821001ECD69 /* InputValidation.swift */; };
@@ -66,6 +69,9 @@
 		86344B7F2318A54600A07184 /* ProjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 		863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubTypeButton.swift; sourceTree = "<group>"; };
 		863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubType.swift; sourceTree = "<group>"; };
+		866461A22323CB8F00051600 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		866461A42324715C00051600 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		866461A6232471B400051600 /* EntrantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantType.swift; sourceTree = "<group>"; };
 		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassanCodeTemp.swift; sourceTree = "<group>"; };
 		86901F52231F2821001ECD69 /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 			children = (
 				863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */,
 				863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */,
+				866461A6232471B400051600 /* EntrantType.swift */,
+				866461A42324715C00051600 /* Field.swift */,
+				866461A22323CB8F00051600 /* Extensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +338,8 @@
 				861D622522FBA44700C4CC26 /* Pass.swift in Sources */,
 				863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */,
 				861D623122FBA61300C4CC26 /* FreeChildGuest.swift in Sources */,
+				866461A52324715C00051600 /* Field.swift in Sources */,
+				866461A7232471B400051600 /* EntrantType.swift in Sources */,
 				861B439C22EDB44400081CF7 /* ViewController.swift in Sources */,
 				861D622F22FBA5F200C4CC26 /* VIPGuest.swift in Sources */,
 				861B439A22EDB44400081CF7 /* AppDelegate.swift in Sources */,
@@ -345,6 +356,7 @@
 				86C26DCB2318AB0D0042FA99 /* SeniorGuest.swift in Sources */,
 				861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */,
 				86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */,
+				866461A32323CB8F00051600 /* Extensions.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
 				86901F51231EFD2E001ECD69 /* PassanCodeTemp.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,

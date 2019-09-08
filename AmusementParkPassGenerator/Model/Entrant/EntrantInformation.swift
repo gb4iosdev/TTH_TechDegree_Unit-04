@@ -16,5 +16,7 @@ struct EntrantInformation {
     let state: String?
     let zipCode: String?
     let socialSecurityNumber: Int?
+    let projectNumber: Int?
+    let company: VendorCompany?
     let dateOfBirth: Date
 }

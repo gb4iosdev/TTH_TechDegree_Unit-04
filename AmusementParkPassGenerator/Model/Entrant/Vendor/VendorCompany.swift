@@ -17,4 +17,14 @@ enum VendorCompany: String, CaseIterable {
     static func allCasesAsStrings() -> [String] {
         return self.allCases.map {$0.rawValue}
     }
+    
+    static func vendorForRow(_ row: Int) -> VendorCompany? {
+        switch row {
+        case 0: return .acme
+        case 1: return .orkin
+        case 2: return .fedex
+        case 3: return .nwElectrical
+        default: return nil
+        }
+    }
 }

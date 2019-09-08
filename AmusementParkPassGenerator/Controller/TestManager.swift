@@ -34,19 +34,19 @@ struct TestManager {
         guard let birthDate3 = format.date(from: birthDateAsString3) else { return }
         
         //Date of birth for child
-        let information1 = EntrantInformation(firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil, socialSecurityNumber: nil, dateOfBirth: birthDate1)
+        let information1 = EntrantInformation(firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil, socialSecurityNumber: nil, projectNumber: nil, company: nil, dateOfBirth: birthDate1)
         //Date of birth too old for child .???
-        let information2 = EntrantInformation(firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil, socialSecurityNumber: nil, dateOfBirth: birthDate2)
+        let information2 = EntrantInformation(firstName: nil, lastName: nil, streetAddress: nil, city: nil, state: nil, zipCode: nil, socialSecurityNumber: nil, projectNumber: nil, company: nil, dateOfBirth: birthDate2)
         //Missing name information
-        let information3 = EntrantInformation(firstName: "Gavin", lastName: nil, streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 123546, dateOfBirth: birthDate2)
+        let information3 = EntrantInformation(firstName: "Gavin", lastName: nil, streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 123546, projectNumber: nil, company: nil, dateOfBirth: birthDate2)
         //All base information present
-        let information4 = EntrantInformation(firstName: "Gavin", lastName: "Senter", streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 123546, dateOfBirth: birthDate2)
+        let information4 = EntrantInformation(firstName: "Gavin", lastName: "Senter", streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 123546, projectNumber: nil, company: nil, dateOfBirth: birthDate2)
         //Missing address information
-        let information5 = EntrantInformation(firstName: "Gavin", lastName: "Jones", streetAddress: "35 Test Street", city: nil, state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 123546, dateOfBirth: birthDate2)
+        let information5 = EntrantInformation(firstName: "Gavin", lastName: "Jones", streetAddress: "35 Test Street", city: nil, state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 123546, projectNumber: nil, company: nil, dateOfBirth: birthDate2)
         //Missing SSN information
-        let information6 = EntrantInformation(firstName: "Gavin", lastName: "Jones", streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: nil, dateOfBirth: birthDate2)
+        let information6 = EntrantInformation(firstName: "Gavin", lastName: "Jones", streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: nil, projectNumber: nil, company: nil, dateOfBirth: birthDate2)
         //Test Birthday Message
-        let information7 = EntrantInformation(firstName: "Gavin", lastName: "Jones", streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 458, dateOfBirth: birthDate3)
+        let information7 = EntrantInformation(firstName: "Gavin", lastName: "Jones", streetAddress: "35 Test Street", city: "Barrie", state: "Ontario", zipCode: "K5T 7G5", socialSecurityNumber: 458, projectNumber: nil, company: nil, dateOfBirth: birthDate3)
         
         //Create Classic Guest
         let classicGuest1 = ClassicGuest()

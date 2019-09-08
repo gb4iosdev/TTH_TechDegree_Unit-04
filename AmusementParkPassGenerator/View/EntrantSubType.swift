@@ -14,8 +14,12 @@ enum EntrantSubType {
     case seniorGuest
     case vipGuest
     case seasonPassGuest
-    case hourlyEmployee(HourlyEmployeeType)
-    case manager(ManagementTier)
+    case hourlyEmployee_foodServices
+    case hourlyEmployee_rideServices
+    case hourlyEmployee_maintenance
+    case manager_shift
+    case manager_senior
+    case manager_general
     case contractor
     case vendor
 }
