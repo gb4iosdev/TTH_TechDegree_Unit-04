@@ -57,7 +57,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="###-##-####" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="suH-ms-gKV" userLabel="SSN Text Field">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#########" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="suH-ms-gKV" userLabel="SSN Text Field">
                                                         <rect key="frame" x="0.0" y="37.5" width="339" height="55"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="mCv-Jm-nlz"/>
@@ -448,16 +448,16 @@
             </objects>
             <point key="canvasLocation" x="26.5625" y="17.578125"/>
         </scene>
-        <!--View Controller-->
+        <!--Pass Tester View Controller-->
         <scene sceneID="NtJ-YP-HM7">
             <objects>
-                <viewController id="MQX-pS-sjl" sceneMemberID="viewController">
+                <viewController id="MQX-pS-sjl" customClass="PassTesterViewController" customModule="AmusementParkPassGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9F-IU-8IE">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen2Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="9s8-SD-Ncu">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teb-rM-Qot">
                                 <rect key="frame" x="234" y="911" width="305" height="85"/>
@@ -607,16 +607,87 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUk-Ke-pGz" userLabel="CreateNewPassLabel">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="70"/>
+                                <color key="backgroundColor" red="0.344119966" green="0.58548295500000003" blue="0.56190145020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="J0J-xl-ocA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" red="0.93740326169999999" green="0.92513066529999999" blue="0.94564527269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pass" translatesAutoresizingMaskIntoConstraints="NO" id="GpY-GA-qsZ">
+                                <rect key="frame" x="29" y="100" width="710" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="8jh-ZP-1py"/>
+                                    <constraint firstAttribute="width" constant="710" id="WZv-kd-0gA"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="Bt7-jp-FU4" userLabel="Pass Content Stack View">
+                                <rect key="frame" x="129.5" y="180" width="509" height="190.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FaceImageAsset" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-E2-Csw">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="190.5"/>
+                                        <color key="backgroundColor" red="0.68627450980392157" green="0.6705882352941176" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="hhk-VJ-hRY" userLabel="Card Information Stack View">
+                                        <rect key="frame" x="285" y="0.0" width="224" height="190.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johnny Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dd-Cg-GHH" userLabel="Entrant Name Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="224" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-nm-Snk" userLabel="Pass Type Label">
+                                                <rect key="frame" x="0.0" y="70" width="110" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0t-I5-sfL" userLabel="Pass Detail Label">
+                                                <rect key="frame" x="0.0" y="126" width="148.5" height="64.5"/>
+                                                <string key="text">Pass Detail Line 1
+Pass Detail Line 2
+Pass Detail Line 3</string>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="textColor" red="0.8591353893" green="0.83851373200000001" blue="0.87559646369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hFc-ga-YBz" firstAttribute="trailing" secondItem="dUk-Ke-pGz" secondAttribute="trailing" id="1PO-Sc-CDK"/>
+                            <constraint firstItem="GpY-GA-qsZ" firstAttribute="centerX" secondItem="h9F-IU-8IE" secondAttribute="centerX" id="EDZ-1l-fQv"/>
                             <constraint firstItem="9s8-SD-Ncu" firstAttribute="leading" secondItem="h9F-IU-8IE" secondAttribute="leading" id="G87-o9-VFU"/>
+                            <constraint firstItem="dUk-Ke-pGz" firstAttribute="centerX" secondItem="h9F-IU-8IE" secondAttribute="centerX" id="IFI-Ei-gD4"/>
+                            <constraint firstItem="GpY-GA-qsZ" firstAttribute="top" secondItem="dUk-Ke-pGz" secondAttribute="bottom" constant="30" id="NZo-MV-3IH"/>
                             <constraint firstItem="9s8-SD-Ncu" firstAttribute="trailing" secondItem="h9F-IU-8IE" secondAttribute="trailing" id="TYb-R3-e6L"/>
-                            <constraint firstItem="9s8-SD-Ncu" firstAttribute="top" secondItem="h9F-IU-8IE" secondAttribute="top" constant="20" id="gHc-gY-1on"/>
+                            <constraint firstItem="Bt7-jp-FU4" firstAttribute="centerX" secondItem="GpY-GA-qsZ" secondAttribute="centerX" id="VWT-55-EWk"/>
+                            <constraint firstItem="Bt7-jp-FU4" firstAttribute="centerY" secondItem="GpY-GA-qsZ" secondAttribute="centerY" id="WV6-Ye-M1r"/>
+                            <constraint firstItem="dUk-Ke-pGz" firstAttribute="leading" secondItem="hFc-ga-YBz" secondAttribute="leading" id="bUe-wc-fC3"/>
+                            <constraint firstItem="9s8-SD-Ncu" firstAttribute="top" secondItem="h9F-IU-8IE" secondAttribute="top" id="gHc-gY-1on"/>
+                            <constraint firstItem="dUk-Ke-pGz" firstAttribute="top" secondItem="h9F-IU-8IE" secondAttribute="top" id="jfI-P8-Rot"/>
                             <constraint firstItem="hFc-ga-YBz" firstAttribute="bottom" secondItem="9s8-SD-Ncu" secondAttribute="bottom" id="mtP-H2-Eck"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFc-ga-YBz"/>
                     </view>
+                    <connections>
+                        <outletCollection property="testButtons" destination="vr2-Sd-Qp6" collectionClass="NSMutableArray" id="rcD-Ff-vbh"/>
+                        <outletCollection property="testButtons" destination="krk-1m-Ed1" collectionClass="NSMutableArray" id="zd0-VN-oXx"/>
+                        <outletCollection property="testButtons" destination="5op-3y-ccU" collectionClass="NSMutableArray" id="lgv-xR-qbV"/>
+                        <outletCollection property="testButtons" destination="g9b-Xe-eYT" collectionClass="NSMutableArray" id="DmS-QO-NIl"/>
+                        <outletCollection property="testButtons" destination="bzP-2F-9hd" collectionClass="NSMutableArray" id="ZTp-M0-yYA"/>
+                        <outletCollection property="testButtons" destination="Emj-V0-L04" collectionClass="NSMutableArray" id="0tO-fr-wyL"/>
+                        <outletCollection property="testButtons" destination="tHq-tk-S0g" collectionClass="NSMutableArray" id="rbD-AI-guX"/>
+                        <outletCollection property="testButtons" destination="lRl-UZ-mHT" collectionClass="NSMutableArray" id="R1Y-xW-iuA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o82-vr-LfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -624,6 +695,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FaceImageAsset" width="102" height="99"/>
+        <image name="Pass" width="1065" height="525"/>
         <image name="Screen1Mockup" width="384" height="512"/>
         <image name="Screen2Mockup" width="384" height="512"/>
     </resources>

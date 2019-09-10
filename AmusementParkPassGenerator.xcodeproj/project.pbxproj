@@ -26,9 +26,11 @@
 		861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623222FBA66700C4CC26 /* HourlyEmployee.swift */; };
 		861D623522FBA6BA00C4CC26 /* ManagementTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623422FBA6BA00C4CC26 /* ManagementTier.swift */; };
 		861D623722FBA6E200C4CC26 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D623622FBA6E200C4CC26 /* Manager.swift */; };
+		8626649323265F800076060F /* PassTesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626649223265F800076060F /* PassTesterViewController.swift */; };
 		86344B802318A54600A07184 /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86344B7F2318A54600A07184 /* ProjectDataSource.swift */; };
 		863D9DB6231BF51E0060CB36 /* EntrantSubTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */; };
 		863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */; };
+		8655269F2327058900DFF66D /* PassType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655269E2327058900DFF66D /* PassType.swift */; };
 		866461A32323CB8F00051600 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A22323CB8F00051600 /* Extensions.swift */; };
 		866461A52324715C00051600 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A42324715C00051600 /* Field.swift */; };
 		866461A7232471B400051600 /* EntrantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A6232471B400051600 /* EntrantType.swift */; };
@@ -66,9 +68,11 @@
 		861D623222FBA66700C4CC26 /* HourlyEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyEmployee.swift; sourceTree = "<group>"; };
 		861D623422FBA6BA00C4CC26 /* ManagementTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementTier.swift; sourceTree = "<group>"; };
 		861D623622FBA6E200C4CC26 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		8626649223265F800076060F /* PassTesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassTesterViewController.swift; sourceTree = "<group>"; };
 		86344B7F2318A54600A07184 /* ProjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 		863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubTypeButton.swift; sourceTree = "<group>"; };
 		863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubType.swift; sourceTree = "<group>"; };
+		8655269E2327058900DFF66D /* PassType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassType.swift; sourceTree = "<group>"; };
 		866461A22323CB8F00051600 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		866461A42324715C00051600 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		866461A6232471B400051600 /* EntrantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantType.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				861D622422FBA44700C4CC26 /* Pass.swift */,
+				8655269E2327058900DFF66D /* PassType.swift */,
 				861D622A22FBA52300C4CC26 /* Area.swift */,
 				861D622022FBA3D200C4CC26 /* Discount.swift */,
 				861D622222FBA40B00C4CC26 /* RideAccessType.swift */,
@@ -233,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				861B439B22EDB44400081CF7 /* ViewController.swift */,
+				8626649223265F800076060F /* PassTesterViewController.swift */,
 				8664B15B2315F7EF00654B61 /* TestManager.swift */,
 			);
 			path = Controller;
@@ -338,6 +344,7 @@
 				861D622522FBA44700C4CC26 /* Pass.swift in Sources */,
 				863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */,
 				861D623122FBA61300C4CC26 /* FreeChildGuest.swift in Sources */,
+				8626649323265F800076060F /* PassTesterViewController.swift in Sources */,
 				866461A52324715C00051600 /* Field.swift in Sources */,
 				866461A7232471B400051600 /* EntrantType.swift in Sources */,
 				861B439C22EDB44400081CF7 /* ViewController.swift in Sources */,
@@ -352,6 +359,7 @@
 				861D622322FBA40B00C4CC26 /* RideAccessType.swift in Sources */,
 				86C26DC72318A82D0042FA99 /* Vendor.swift in Sources */,
 				863D9DB6231BF51E0060CB36 /* EntrantSubTypeButton.swift in Sources */,
+				8655269F2327058900DFF66D /* PassType.swift in Sources */,
 				86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */,
 				86C26DCB2318AB0D0042FA99 /* SeniorGuest.swift in Sources */,
 				861D623322FBA66700C4CC26 /* HourlyEmployee.swift in Sources */,

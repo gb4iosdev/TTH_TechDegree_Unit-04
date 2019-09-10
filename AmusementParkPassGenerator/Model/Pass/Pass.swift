@@ -9,15 +9,17 @@
 import Foundation
 
 class Pass {
-    var areaAccess: Set<Area>
-    var rideAccess: Set<RideAccess>
-    var discounts: [Discount]?
-    var uuid: String
+    let areaAccess: Set<Area>
+    let rideAccess: Set<RideAccess>
+    let discounts: [Discount]?
+    let uuid: String
+    let type: PassType
     
-    init(to areas: Set<Area>, rides: Set<RideAccess>, discounts:[Discount]? = nil) {
+    init(of type: PassType, to areas: Set<Area>, rides: Set<RideAccess>, discounts:[Discount]? = nil) {
         areaAccess = areas
         rideAccess = rides
         self.discounts = discounts
         uuid = UUID().description
+        self.type = type
     }
 }

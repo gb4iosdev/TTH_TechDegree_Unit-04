@@ -8,7 +8,7 @@
 
 import Foundation
 
-class seniorGuest: Entrant {
+class SeniorGuest: Entrant {
     
     var entrantInformation: EntrantInformation?
     let pass: Pass

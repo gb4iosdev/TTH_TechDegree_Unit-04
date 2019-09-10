@@ -11,8 +11,8 @@ import Foundation
 class InputValidation {
     
     //SSN Field Validation Parameters
-    let allowedSSNCharacters = CharacterSet(charactersIn: "-123456789")
-    let ssnMaxLength = 11   //Includes dashes if used
+    let allowedSSNCharacters = CharacterSet(charactersIn: "123456789")
+    let ssnMaxLength = 9
     
     //Zip Code Validation Parameters
     let allowedZipCodeCharacters = CharacterSet(charactersIn: "123456789")

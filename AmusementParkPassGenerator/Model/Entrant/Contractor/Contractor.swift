@@ -12,9 +12,8 @@ class Contractor: Entrant {
     
     var entrantInformation: EntrantInformation?
     let pass: Pass
-    let projectNumber: Int
     
-    init(entrantInformation information: EntrantInformation, projectNumber project: Int) throws {
+    init(entrantInformation information: EntrantInformation) throws {
         guard information.firstName != nil, information.lastName != nil else {
             throw InformationError.missingNameInformation(detail: "Missing Name information for contractor")
         }
@@ -24,12 +23,11 @@ class Contractor: Entrant {
         guard information.socialSecurityNumber != nil else {
             throw InformationError.missingSocialSecurityNumber(detail: "Missing Social Security Number for contractor")
         }
-        guard let accessAreas = ProjectDataSource.accessAreas[project]  else {
+        guard let project = information.projectNumber, let accessAreas = ProjectDataSource.accessAreas[project]  else {
             throw InformationError.invalidProject(detail: "Project number is not registered")
         }
         
         self.entrantInformation = information
         self.pass = Pass(to: accessAreas, rides: [.noRideAccess])
-        self.projectNumber = project
     }
 }

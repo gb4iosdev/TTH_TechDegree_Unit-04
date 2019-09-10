@@ -12,18 +12,16 @@ class Vendor: Entrant {
     
     var entrantInformation: EntrantInformation?
     let pass: Pass
-    let vendorCompany: VendorCompany
     let visitDate: Date
     
-    init(entrantInformation information: EntrantInformation, from company: VendorCompany) throws {
+    init(entrantInformation information: EntrantInformation) throws {
         guard information.firstName != nil, information.lastName != nil else {
             throw InformationError.missingNameInformation(detail: "Missing Name information for vendor")
         }
-        guard let accessAreas = VendorCompanyDataSource.accessAreas[company]  else {
+        guard let vendorCompany = information.company, let accessAreas = VendorCompanyDataSource.accessAreas[vendorCompany]  else {
             throw InformationError.invalidVendorCompany(detail: "Vendor Company is not registered")
         }
         
-        self.vendorCompany = company
         self.entrantInformation = information
         self.pass = Pass(to: accessAreas, rides: [.noRideAccess])
         self.visitDate = Date()

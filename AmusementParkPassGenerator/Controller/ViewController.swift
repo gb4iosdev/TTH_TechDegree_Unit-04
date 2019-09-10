@@ -175,9 +175,22 @@ class ViewController: UIViewController {
     
     @IBAction func generatePassbuttonPressed(_ sender: UIButton) {
         
+        //Generate the information object from enabled fields
         let entrantInformation = generateInformationObject()
-        print("About to dump entrant Info")
-        dump(entrantInformation)
+        
+        do {
+            let entrant = try createEntrant(ofSubType : currentEntrantSubType, with: entrantInformation)
+        }
+        catch InformationError {
+            let alertController = UIAlertController(title: error.title(), message: error.message(), preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(action)
+            
+            present(alertController, animated: true, completion: nil)
+        } catch let error {              //Unknown error encountered
+            fatalError("\(error.localizedDescription)")
+        }
     }
     
     @IBAction func populateDataButtonPressed(_ sender: UIButton) {
@@ -364,6 +377,7 @@ extension ViewController {
         //No information required for classic and vip guests
         if selectedEntrantSubType == .classicGuest || selectedEntrantSubType == .vipGuest { return nil }
         
+        
         //Should have a date
         let dateOfBirth = datePicker.date
         var ssn: Int? {
@@ -386,7 +400,42 @@ extension ViewController {
         return EntrantInformation(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, socialSecurityNumber: ssn, projectNumber: projectNumber, company: company, dateOfBirth: dateOfBirth)
     }
     
+    //Return the text field value if it is enabled and contains text
     func getTextFieldValueIfEnabled (field: UITextField) -> String? {
-        return field.isUserInteractionEnabled ? field.text : nil
+        return field.isUserInteractionEnabled && field.text != "" ? field.text : nil
+    }
+    
+    func createEntrant(ofSubType subType: EntrantSubType, with information: EntrantInformation?) throws -> Entrant {
+        let entrant: Entrant
+        switch subType {
+        case .childGuest:
+            entrant = try FreeChildGuest(entrantInformation: information!)  //Need to get rid of the forced unwrapping
+        case .classicGuest:
+            entrant = ClassicGuest()
+        case .seniorGuest:
+            entrant = try SeniorGuest(entrantInformation: information!)
+        case .vipGuest:
+            entrant = VIPGuest()
+        case .seasonPassGuest:
+            entrant = try SeasonPassGuest(entrantInformation: information!)
+        case .hourlyEmployee_foodServices:
+            entrant = try HourlyEmployee(ofType: .foodServices, entrantInformation: information!)
+        case .hourlyEmployee_rideServices:
+            entrant = try HourlyEmployee(ofType: . rideServices, entrantInformation: information!)
+        case .hourlyEmployee_maintenance:
+            entrant = try HourlyEmployee(ofType: . maintenance, entrantInformation: information!)
+        case .manager_shift:
+            entrant = try Manager(entrantInformation: information!, managementTier: .shiftManager)
+        case .manager_senior:
+            entrant = try Manager(entrantInformation: information!, managementTier: .seniorManager)
+        case .manager_general:
+            entrant = try Manager(entrantInformation: information!, managementTier: .generalManager)
+        case .contractor:
+            entrant = try Contractor(entrantInformation: information!)
+        case .vendor:
+            entrant = try Vendor(entrantInformation: information)
+        
+        }
+        return entrant
     }
 }
