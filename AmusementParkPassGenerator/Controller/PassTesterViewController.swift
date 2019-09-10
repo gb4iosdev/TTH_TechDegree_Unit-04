@@ -12,9 +12,18 @@ class PassTesterViewController: UIViewController {
     
     var entrant: Entrant?
     
+    
+    @IBOutlet weak var passNameLabel: UILabel!
+    @IBOutlet weak var passTypeLabel: UILabel!
+    @IBOutlet weak var passDetailLabel: UILabel!
+    
+    
     @IBOutlet var testButtons: [UIButton]!
     
+    @IBOutlet weak var testResultsLabel: UILabel!
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,5 +40,9 @@ class PassTesterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func createNewPassButtonPressed(_ sender: UIButton) {
+    }
+    
 
 }
