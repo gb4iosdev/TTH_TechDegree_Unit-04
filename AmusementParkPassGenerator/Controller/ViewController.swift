@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     //Rename this one to something to do with responder fields!!
     var currentlyActiveTextField: UITextField?
     var currentEntrantSubType: EntrantSubType?
+    var currentEntrant: Entrant?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,11 +178,13 @@ class ViewController: UIViewController {
         
         //Generate the information object from enabled fields
         let entrantInformation = generateInformationObject()
+        guard let entrantSubType = currentEntrantSubType else { return }
         
         do {
-            let entrant = try createEntrant(ofSubType : currentEntrantSubType, with: entrantInformation)
+            self.currentEntrant = try createEntrant(ofSubType : entrantSubType, with: entrantInformation)
+            dump(currentEntrant)
         }
-        catch InformationError {
+        catch let error as InformationError {
             let alertController = UIAlertController(title: error.title(), message: error.message(), preferredStyle: .alert)
             
             let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -316,6 +319,17 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
+//MARK:- Segue
+
+extension ViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createNewPassSegue", let createNewPassViewController = segue.destination as? PassTesterViewController, let entrant = currentEntrant {
+            createNewPassViewController.entrant = entrant
+        }
+    }
+}
+
 //MARK:- Helper functions and extensions
 
 extension ViewController {
@@ -405,36 +419,44 @@ extension ViewController {
         return field.isUserInteractionEnabled && field.text != "" ? field.text : nil
     }
     
-    func createEntrant(ofSubType subType: EntrantSubType, with information: EntrantInformation?) throws -> Entrant {
+    func createEntrant(ofSubType subType: EntrantSubType, with entrantInformation: EntrantInformation?) throws -> Entrant {
         let entrant: Entrant
-        switch subType {
-        case .childGuest:
-            entrant = try FreeChildGuest(entrantInformation: information!)  //Need to get rid of the forced unwrapping
-        case .classicGuest:
-            entrant = ClassicGuest()
-        case .seniorGuest:
-            entrant = try SeniorGuest(entrantInformation: information!)
-        case .vipGuest:
-            entrant = VIPGuest()
-        case .seasonPassGuest:
-            entrant = try SeasonPassGuest(entrantInformation: information!)
-        case .hourlyEmployee_foodServices:
-            entrant = try HourlyEmployee(ofType: .foodServices, entrantInformation: information!)
-        case .hourlyEmployee_rideServices:
-            entrant = try HourlyEmployee(ofType: . rideServices, entrantInformation: information!)
-        case .hourlyEmployee_maintenance:
-            entrant = try HourlyEmployee(ofType: . maintenance, entrantInformation: information!)
-        case .manager_shift:
-            entrant = try Manager(entrantInformation: information!, managementTier: .shiftManager)
-        case .manager_senior:
-            entrant = try Manager(entrantInformation: information!, managementTier: .seniorManager)
-        case .manager_general:
-            entrant = try Manager(entrantInformation: information!, managementTier: .generalManager)
-        case .contractor:
-            entrant = try Contractor(entrantInformation: information!)
-        case .vendor:
-            entrant = try Vendor(entrantInformation: information)
         
+        if let information = entrantInformation {
+            switch subType {
+            case .childGuest:
+                entrant = try FreeChildGuest(entrantInformation: information)  //Need to get rid of the forced unwrapping
+            case .seniorGuest:
+                entrant = try SeniorGuest(entrantInformation: information)
+            case .seasonPassGuest:
+                entrant = try SeasonPassGuest(entrantInformation: information)
+            case .hourlyEmployee_foodServices:
+                entrant = try HourlyEmployee(ofType: .foodServices, entrantInformation: information)
+            case .hourlyEmployee_rideServices:
+                entrant = try HourlyEmployee(ofType: . rideServices, entrantInformation: information)
+            case .hourlyEmployee_maintenance:
+                entrant = try HourlyEmployee(ofType: . maintenance, entrantInformation: information)
+            case .manager_shift:
+                entrant = try Manager(entrantInformation: information, managementTier: .shiftManager)
+            case .manager_senior:
+                entrant = try Manager(entrantInformation: information, managementTier: .seniorManager)
+            case .manager_general:
+                entrant = try Manager(entrantInformation: information, managementTier: .generalManager)
+            case .contractor:
+                entrant = try Contractor(entrantInformation: information)
+            case .vendor:
+                entrant = try Vendor(entrantInformation: information)
+            default: fatalError("Entrant subType not found for non-nil information")
+            }
+
+        } else {    //Should only be nil for classic and vip guests
+            switch subType {
+            case .classicGuest:
+                entrant = ClassicGuest()
+            case .vipGuest:
+                entrant = VIPGuest()
+            default: fatalError("Guest information not required")
+            }
         }
         return entrant
     }

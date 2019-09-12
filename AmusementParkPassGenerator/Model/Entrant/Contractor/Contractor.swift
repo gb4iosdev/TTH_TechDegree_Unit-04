@@ -28,6 +28,6 @@ class Contractor: Entrant {
         }
         
         self.entrantInformation = information
-        self.pass = Pass(to: accessAreas, rides: [.noRideAccess])
+        self.pass = Pass(of: .contractorPass, to: accessAreas, rides: [.noRideAccess])
     }
 }

@@ -13,9 +13,8 @@ class ClassicGuest: Entrant {
     var entrantInformation: EntrantInformation? = nil
     
     init() {
-        self.pass = Pass (to: [Area.amusement],
-                          rides: [.allRides]
-        )
+        self.pass = Pass(of: .classicGuestPass, to: [Area.amusement],
+                         rides: [.allRides])
     }
 }
 

@@ -13,8 +13,7 @@ class VIPGuest: Entrant {
     var entrantInformation: EntrantInformation? = nil
     
     init() {
-        self.pass = Pass (to: [Area.amusement],
-                          rides: [.allRides, .skipLines],discounts: [.food(0.1), .merchandise(0.2)]
-        )
+        self.pass = Pass(of: .vipGuestPass, to: [Area.amusement],
+                         rides: [.allRides, .skipLines],discounts: [.food(0.1), .merchandise(0.2)])
     }
 }

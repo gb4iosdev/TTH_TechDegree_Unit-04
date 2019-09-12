@@ -345,6 +345,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="generatePassbuttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4j-xR-sNX"/>
+                                            <segue destination="MQX-pS-sjl" kind="show" identifier="createNewPassSegue" id="efb-yc-qax"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9N-0b-v5x">

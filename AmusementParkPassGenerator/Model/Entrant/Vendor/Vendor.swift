@@ -23,7 +23,7 @@ class Vendor: Entrant {
         }
         
         self.entrantInformation = information
-        self.pass = Pass(to: accessAreas, rides: [.noRideAccess])
+        self.pass = Pass(of: .vendorPass, to: accessAreas, rides: [.noRideAccess])
         self.visitDate = Date()
     }
 }

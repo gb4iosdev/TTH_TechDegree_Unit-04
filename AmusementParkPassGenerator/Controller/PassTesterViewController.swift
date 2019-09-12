@@ -26,7 +26,12 @@ class PassTesterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("in new VC and entrant dump is: \(String(describing: dump(entrant)))")
+        if let currentEntrantInformation = entrant?.entrantInformation {
+            passNameLabel.text = currentEntrantInformation.formattedNameForTextField
+            passTypeLabel.text = entrant?.pass.type.rawValue
+        }
         //displayEntitlementsOnPass() 
     }
     

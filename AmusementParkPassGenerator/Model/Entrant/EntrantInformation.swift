@@ -19,4 +19,12 @@ struct EntrantInformation {
     let projectNumber: Int?
     let company: VendorCompany?
     let dateOfBirth: Date
+    
+    var formattedNameForTextField: String? {
+        if let first = firstName, let last = lastName {
+            return first + " " + last
+        } else {
+            return nil
+        }
+    }
 }
