@@ -23,3 +23,29 @@ class Pass {
         self.type = type
     }
 }
+
+//MARK: - Helper Functions
+extension Pass {
+    
+    func formattedRideAccessForPass() -> String {
+        return "\u{2022} " + rideAccess.map{ $0.rawValue }.joined(separator: "\n\u{2022} ")
+    }
+    
+    func formattedDiscountsForPass() -> String {
+        if let discounts = self.discounts {
+            var discountsString: String = ""
+            for discount in discounts {
+                switch discount {
+                case .food:
+                    discountsString += "\u{2022} Food discount: \(discount.formattedValue())\n"
+                case .merchandise:
+                    discountsString += "\u{2022} Merchandise discount: \(discount.formattedValue())\n"
+                }
+            }
+            return discountsString
+        } else {
+            return ""
+        }
+    }
+    
+}

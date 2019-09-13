@@ -9,13 +9,20 @@
 import Foundation
 
 enum Discount {
-    case food(Double)
-    case merchandise(Double)
+    case food(Int)
+    case merchandise(Int)
     
-    func value () -> Double {
+    func value () -> Int {
         switch self {
         case .food(let value):  return value
         case .merchandise(let value): return value
+        }
+    }
+    
+    func formattedValue() -> String {
+        switch self {
+        case .food(let value): return String(value) + "%"
+        case .merchandise(let value): return String(value) + "%"
         }
     }
 }

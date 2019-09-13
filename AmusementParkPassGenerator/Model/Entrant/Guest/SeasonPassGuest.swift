@@ -22,6 +22,6 @@ class SeasonPassGuest: Entrant {
         }
         
         self.entrantInformation = information
-        self.pass = Pass(of: .seasonPassGuestPass, to: [.amusement], rides: [.allRides, . skipLines], discounts: [.food(0.1), .merchandise(0.2)])
+        self.pass = Pass(of: .seasonPassGuestPass, to: [.amusement], rides: [.allRides, . skipLines], discounts: [.food(10), .merchandise(20)])
     }
 }

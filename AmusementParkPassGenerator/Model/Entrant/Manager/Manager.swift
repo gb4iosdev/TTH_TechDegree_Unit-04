@@ -30,6 +30,6 @@ class Manager: Entrant {
         self.managementTier = tier
         
         self.pass = Pass(of: .managerPass, to: Set(Area.allCases),
-                         rides: [.allRides], discounts: [.food(0.25), .merchandise(0.25)])
+                         rides: [.allRides], discounts: [.food(25), .merchandise(25)])
     }
 }

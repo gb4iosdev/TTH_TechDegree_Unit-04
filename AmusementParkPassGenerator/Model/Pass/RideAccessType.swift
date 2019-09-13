@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum RideAccess {
-    case allRides
-    case skipLines
-    case noRideAccess
+enum RideAccess: String {
+    case allRides = "Unlimited Rides"
+    case skipLines = "Skip the Ride Line"
+    case noRideAccess = "No Ride Access"
 }

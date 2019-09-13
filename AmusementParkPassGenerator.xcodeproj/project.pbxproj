@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860BDBCC232B13130095C426 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860BDBCB232B13130095C426 /* TestButton.swift */; };
 		861B439A22EDB44400081CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B439922EDB44400081CF7 /* AppDelegate.swift */; };
 		861B439C22EDB44400081CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861B439B22EDB44400081CF7 /* ViewController.swift */; };
 		861B439F22EDB44400081CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861B439D22EDB44400081CF7 /* Main.storyboard */; };
@@ -35,7 +36,6 @@
 		866461A52324715C00051600 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A42324715C00051600 /* Field.swift */; };
 		866461A7232471B400051600 /* EntrantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A6232471B400051600 /* EntrantType.swift */; };
 		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
-		86901F51231EFD2E001ECD69 /* PassanCodeTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */; };
 		86901F53231F2821001ECD69 /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F52231F2821001ECD69 /* InputValidation.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
 		86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */; };
@@ -47,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		860BDBCB232B13130095C426 /* TestButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButton.swift; sourceTree = "<group>"; };
 		861B439622EDB44400081CF7 /* AmusementParkPassGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmusementParkPassGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		861B439922EDB44400081CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		861B439B22EDB44400081CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		866461A42324715C00051600 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		866461A6232471B400051600 /* EntrantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantType.swift; sourceTree = "<group>"; };
 		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
-		86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassanCodeTemp.swift; sourceTree = "<group>"; };
 		86901F52231F2821001ECD69 /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompanyDataSource.swift; sourceTree = "<group>"; };
@@ -99,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860BDBCD232B134A0095C426 /* PassTesterController */ = {
+			isa = PBXGroup;
+			children = (
+				8626649223265F800076060F /* PassTesterViewController.swift */,
+				860BDBCE232B137C0095C426 /* View */,
+			);
+			path = PassTesterController;
+			sourceTree = "<group>";
+		};
+		860BDBCE232B137C0095C426 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				860BDBCB232B13130095C426 /* TestButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		861B438D22EDB44300081CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +138,8 @@
 				861B439922EDB44400081CF7 /* AppDelegate.swift */,
 				861B439D22EDB44400081CF7 /* Main.storyboard */,
 				86901F52231F2821001ECD69 /* InputValidation.swift */,
-				86901F50231EFD2E001ECD69 /* PassanCodeTemp.swift */,
-				863D9DB3231BF3590060CB36 /* Controller */,
-				863D9DB4231BF4F10060CB36 /* View */,
+				863D9DB3231BF3590060CB36 /* Main Controller */,
+				860BDBCD232B134A0095C426 /* PassTesterController */,
 				861D621622FBA22600C4CC26 /* Model */,
 				861B43A022EDB44600081CF7 /* Assets.xcassets */,
 				861B43A222EDB44600081CF7 /* LaunchScreen.storyboard */,
@@ -234,14 +250,14 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
-		863D9DB3231BF3590060CB36 /* Controller */ = {
+		863D9DB3231BF3590060CB36 /* Main Controller */ = {
 			isa = PBXGroup;
 			children = (
 				861B439B22EDB44400081CF7 /* ViewController.swift */,
-				8626649223265F800076060F /* PassTesterViewController.swift */,
+				863D9DB4231BF4F10060CB36 /* View */,
 				8664B15B2315F7EF00654B61 /* TestManager.swift */,
 			);
-			path = Controller;
+			path = "Main Controller";
 			sourceTree = "<group>";
 		};
 		863D9DB4231BF4F10060CB36 /* View */ = {
@@ -342,6 +358,7 @@
 				861D621E22FBA37D00C4CC26 /* EntrantInformation.swift in Sources */,
 				861D621C22FBA2C900C4CC26 /* InformationError.swift in Sources */,
 				861D622522FBA44700C4CC26 /* Pass.swift in Sources */,
+				860BDBCC232B13130095C426 /* TestButton.swift in Sources */,
 				863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */,
 				861D623122FBA61300C4CC26 /* FreeChildGuest.swift in Sources */,
 				8626649323265F800076060F /* PassTesterViewController.swift in Sources */,
@@ -366,7 +383,6 @@
 				86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */,
 				866461A32323CB8F00051600 /* Extensions.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
-				86901F51231EFD2E001ECD69 /* PassanCodeTemp.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,
 				86901F53231F2821001ECD69 /* InputValidation.swift in Sources */,
 			);

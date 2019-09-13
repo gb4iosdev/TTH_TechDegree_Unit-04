@@ -19,7 +19,7 @@ class SeniorGuest: Entrant {
         }
         
         self.entrantInformation = information
-        self.pass = Pass(of: .seniorGuestPass, to: [.amusement], rides: [.allRides, . skipLines], discounts: [.food(0.1), .merchandise(0.1)])
+        self.pass = Pass(of: .seniorGuestPass, to: [.amusement], rides: [.allRides, . skipLines], discounts: [.food(10), .merchandise(10)])
     }
 }
 
