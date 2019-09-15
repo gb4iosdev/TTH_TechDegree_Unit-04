@@ -14,22 +14,28 @@ protocol Entrant {
 }
 
 extension Entrant {
-    func swipe(at checkpoint: Checkpoint) {
-        checkpoint.checkPassEntitlements(self.pass)
-        checkForBirthday()
+    func swipe(at checkpoint: Checkpoint) -> AccessFeedBack {
+        var feedback = checkpoint.checkAreaAccess(self.pass)
+        if let birthDayMessage = checkForBirthday() {
+            feedback.accessFeedback += "\n" + birthDayMessage
+        }
+        return feedback
     }
     
-    func checkForBirthday() {
+    func checkForBirthday() -> String? {
+        
+        guard let entrantBirthdate = entrantInformation?.dateOfBirth else { return nil }
+        
         //Celebrate birthday:
-        if let entrantBirthdate = entrantInformation?.dateOfBirth {
-            let format = DateFormatter()
-            format.dateFormat = "MM-dd"
-            let formattedToday = format.string(from: Date())
-            let formattedEntrantBirthDate = format.string(from: entrantBirthdate)
-            
-            if formattedToday == formattedEntrantBirthDate {
-                print("Wish the entrant a happy birthday!!")
-            }
+        let format = DateFormatter()
+        format.dateFormat = "MM-dd"
+        let formattedToday = format.string(from: Date())
+        let formattedEntrantBirthDate = format.string(from: entrantBirthdate)
+        
+        if formattedToday == formattedEntrantBirthDate {
+            return "Wish the entrant a happy birthday!!"
+        } else {
+            return nil
         }
     }
 }

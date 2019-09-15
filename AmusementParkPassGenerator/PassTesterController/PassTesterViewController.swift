@@ -11,7 +11,8 @@ import UIKit
 class PassTesterViewController: UIViewController {
     
     var entrant: Entrant?
-    lazy var office = Checkpoint(ofType: .areaAccess, inArea: .office)
+    //var currentCheckPoint: Checkpoint?
+    var soundPlayer = SoundPlayer()
     
     
     @IBOutlet weak var passNameLabel: UILabel!
@@ -23,67 +24,86 @@ class PassTesterViewController: UIViewController {
     
     @IBOutlet weak var testResultsLabel: UILabel!
     
+    //Setup all checkpoints
+    let office = Checkpoint(ofType: .areaAccess, inArea: .office)
+    let kitchen = Checkpoint(ofType: .areaAccess, inArea: .kitchen)
+    let rideControl = Checkpoint(ofType: .areaAccess, inArea: .rideControl)
+    let amusement = Checkpoint(ofType: .areaAccess, inArea: .amusement)
+    let maintenance = Checkpoint(ofType: .areaAccess, inArea: .maintenance)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("in new VC and entrant dump is: \(String(describing: dump(entrant)))")
+        //Prepare sound player
+        soundPlayer.loadAccessSounds()
+        
+        //Populate the Pass if entrant information exists:
+        
+        //Entrant Name:
         if let currentEntrantInformation = entrant?.entrantInformation {
             passNameLabel.text = currentEntrantInformation.formattedNameForTextField
             
         }
-        
+        //Pass Type and benefits:
         if let entrant = self.entrant {
             passTypeLabel.text = entrant.pass.type.rawValue
             passDetailLabel.text = entrant.pass.formattedRideAccessForPass() + "\n" + entrant.pass.formattedDiscountsForPass()
         }
-        //displayEntitlementsOnPass() 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func testButtonPressed(_ sender: UIButton) {
         
-        //guard let testButtonTag = sender.tag else { return }
-        
         guard let buttonPressed = TestButton(rawValue: sender.tag) else { return }
-        //print("sender.tag is \(sender.tag)")
+        
+        guard let entrant = self.entrant else { return }
+        
+        var accessIsGranted: Bool
+        
         switch buttonPressed {
         case .office:
-            print("office")
+            let swipeResult = entrant.swipe(at: office)
+            testResultsLabel.text = swipeResult.accessFeedback
+            accessIsGranted = swipeResult.accessIsGranted
         case .kitchen:
-            print("office")
+            let swipeResult = entrant.swipe(at: kitchen)
+            testResultsLabel.text = swipeResult.accessFeedback
+            accessIsGranted = swipeResult.accessIsGranted
         case .rideControl:
-            print("office")
+            let swipeResult = entrant.swipe(at: rideControl)
+            testResultsLabel.text = swipeResult.accessFeedback
+            accessIsGranted = swipeResult.accessIsGranted
         case .amusement:
-            print("office")
+            let swipeResult = entrant.swipe(at: amusement)
+            testResultsLabel.text = swipeResult.accessFeedback
+            accessIsGranted = swipeResult.accessIsGranted
         case .rides:
-            print("office")
+            accessIsGranted = entrant.pass.hasRideAccess
+            testResultsLabel.text = entrant.pass.formattedRideAccessForPass()
         case .foodDiscount:
-            print("office")
+            accessIsGranted = entrant.pass.hasDiscount(for: .food)
+            testResultsLabel.text = entrant.pass.formattedDiscount(for: .food)
         case .merchandiseDiscount:
-            print("office")
+            accessIsGranted = entrant.pass.hasDiscount(for: .merchandise)
+            testResultsLabel.text = entrant.pass.formattedDiscount(for: .merchandise)
         case .maintenance:
-            print("office")
-
+            let swipeResult = entrant.swipe(at: maintenance)
+            testResultsLabel.text = swipeResult.accessFeedback
+            accessIsGranted = swipeResult.accessIsGranted
         }
         
+        //Set Test Label's appropriate background colour and play appropriate sound
+        if accessIsGranted {
+            testResultsLabel.backgroundColor = .green
+            soundPlayer.playAccessGrantedSound()
+        } else {
+            testResultsLabel.backgroundColor = .red
+            soundPlayer.playAccessDeniedSound()
+        }
     }
     
     
     @IBAction func createNewPassButtonPressed(_ sender: UIButton) {
-        
-        
+        //Return to main view controller
+        dismiss(animated: true, completion: nil)
     }
-    
-
 }

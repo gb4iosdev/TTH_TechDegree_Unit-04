@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let testManager = TestManager()     //Manage Test Cases for Project 4
     let inputValidator = InputValidation()  //Manage Text Field validation
     
     // MARK: - Outlets
@@ -117,7 +116,7 @@ class ViewController: UIViewController {
             let button = EntrantSubTypeButton(entrantSubType: entrantSubType)
             button.heightAnchor.constraint(equalToConstant: 55).isActive = true
             button.setTitle(buttonTitle, for: .normal)
-            button.backgroundColor = .blue
+            button.backgroundColor = UIColor(red: 67/255, green: 53/255, blue: 82/255, alpha: 1.0)
             button.addTarget(self, action: #selector(ViewController.entrantSubTypeSelected(button:)), for: .touchUpInside)
             entrantSubTypeStackView.addArrangedSubview(button)
         }
@@ -286,8 +285,8 @@ extension ViewController: UITextFieldDelegate {
             if let info = notification.userInfo, let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 //Move Main StackView up to make room for keyboard
                 let frame = keyboardFrame.cgRectValue
-                mainStackViewBottomConstraint.constant = mainStackViewBottomConstraint.constant + frame.size.height/3
-                mainStackViewTopConstraint.constant = mainStackViewTopConstraint.constant - frame.size.height/3
+                mainStackViewBottomConstraint.constant = mainStackViewBottomConstraint.constant + frame.size.height/2
+                mainStackViewTopConstraint.constant = mainStackViewTopConstraint.constant - frame.size.height/2
                 UIView.animate(withDuration: 0.8) {
                     self.view.layoutIfNeeded()
                 }
@@ -408,7 +407,14 @@ extension ViewController {
         let state = getTextFieldValueIfEnabled(field: stateTextField)
         let zipCode = getTextFieldValueIfEnabled(field: zipCodeTextField)
         
-        let projectNumber = projectPicker.isUserInteractionEnabled ? projectPicker.selectedRow(inComponent: 0) : nil
+        var projectNumber: Int? {
+            if projectPicker.isUserInteractionEnabled {
+                let pickerRow = projectPicker.selectedRow(inComponent: 0)
+                return ProjectDataSource.projects[pickerRow]
+            } else {
+                return nil
+            }
+        }
         let company = companyPicker.isUserInteractionEnabled ? VendorCompany.vendorForRow(companyPicker.selectedRow(inComponent: 0))  : nil
         
         return EntrantInformation(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, socialSecurityNumber: ssn, projectNumber: projectNumber, company: company, dateOfBirth: dateOfBirth)

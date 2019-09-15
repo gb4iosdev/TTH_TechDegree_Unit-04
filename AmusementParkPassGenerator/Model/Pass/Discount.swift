@@ -8,21 +8,7 @@
 
 import Foundation
 
-enum Discount {
-    case food(Int)
-    case merchandise(Int)
-    
-    func value () -> Int {
-        switch self {
-        case .food(let value):  return value
-        case .merchandise(let value): return value
-        }
-    }
-    
-    func formattedValue() -> String {
-        switch self {
-        case .food(let value): return String(value) + "%"
-        case .merchandise(let value): return String(value) + "%"
-        }
-    }
+enum Discount: String {
+    case food = "Food Discount"
+    case merchandise = "Merchandise Discount"
 }

@@ -14,6 +14,6 @@ class VIPGuest: Entrant {
     
     init() {
         self.pass = Pass(of: .vipGuestPass, to: [Area.amusement],
-                         rides: [.allRides, .skipLines],discounts: [.food(10), .merchandise(20)])
+                         rides: [.allRides, .skipLines], discounts: [.food : 10, .merchandise : 20])
     }
 }

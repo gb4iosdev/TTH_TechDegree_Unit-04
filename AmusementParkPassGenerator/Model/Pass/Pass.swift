@@ -10,12 +10,14 @@ import Foundation
 
 class Pass {
     let areaAccess: Set<Area>
-    let rideAccess: Set<RideAccess>
-    let discounts: [Discount]?
+    var rideAccess: Set<RideAccess>
+    var discounts: [Discount: Int]?
     let uuid: String
     let type: PassType
     
-    init(of type: PassType, to areas: Set<Area>, rides: Set<RideAccess>, discounts:[Discount]? = nil) {
+    var hasRideAccess: Bool { return !rideAccess.contains(.noRideAccess)}
+    
+    init(of type: PassType, to areas: Set<Area>, rides: Set<RideAccess>, discounts: [Discount : Int]? = nil) {
         areaAccess = areas
         rideAccess = rides
         self.discounts = discounts
@@ -26,7 +28,7 @@ class Pass {
 
 //MARK: - Helper Functions
 extension Pass {
-    
+
     func formattedRideAccessForPass() -> String {
         return "\u{2022} " + rideAccess.map{ $0.rawValue }.joined(separator: "\n\u{2022} ")
     }
@@ -34,13 +36,8 @@ extension Pass {
     func formattedDiscountsForPass() -> String {
         if let discounts = self.discounts {
             var discountsString: String = ""
-            for discount in discounts {
-                switch discount {
-                case .food:
-                    discountsString += "\u{2022} Food discount: \(discount.formattedValue())\n"
-                case .merchandise:
-                    discountsString += "\u{2022} Merchandise discount: \(discount.formattedValue())\n"
-                }
+            for (discount, _) in discounts {
+                discountsString += "\u{2022} \(formattedDiscount(for: discount))\n"
             }
             return discountsString
         } else {
@@ -48,4 +45,19 @@ extension Pass {
         }
     }
     
+    func formattedDiscount(for discountType: Discount) -> String {
+        if let discounts = self.discounts, let value = discounts[discountType] {
+            return " \(discountType.rawValue): \(value)%"
+        } else {
+            return "No \(discountType.rawValue)"
+        }
+    }
+    
+    func hasDiscount(for discountType: Discount) -> Bool {
+        if let discounts = self.discounts, discounts[discountType] != nil {
+            return true
+        } else {
+            return false
+        }
+    }
 }

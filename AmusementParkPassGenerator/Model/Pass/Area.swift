@@ -9,9 +9,9 @@
 import Foundation
 
 enum Area: String, CaseIterable {
-    case amusement
-    case kitchen
-    case rideControl
-    case maintenance
-    case office
+    case amusement = "Amusement Area"
+    case kitchen = "Kitchen"
+    case rideControl = "Ride Control Point"
+    case maintenance = "Maintenance Area"
+    case office = "Office"
 }

@@ -35,8 +35,12 @@
 		866461A32323CB8F00051600 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A22323CB8F00051600 /* Extensions.swift */; };
 		866461A52324715C00051600 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A42324715C00051600 /* Field.swift */; };
 		866461A7232471B400051600 /* EntrantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A6232471B400051600 /* EntrantType.swift */; };
-		8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664B15B2315F7EF00654B61 /* TestManager.swift */; };
 		86901F53231F2821001ECD69 /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86901F52231F2821001ECD69 /* InputValidation.swift */; };
+		86907E5F232D17F7002B52D4 /* CheckPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86907E5E232D17F7002B52D4 /* CheckPointType.swift */; };
+		86907E61232DAF7A002B52D4 /* AccessGranted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86907E60232DAF7A002B52D4 /* AccessGranted.wav */; };
+		86907E63232DAF87002B52D4 /* AccessDenied.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86907E62232DAF87002B52D4 /* AccessDenied.wav */; };
+		86907E65232DAFE7002B52D4 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86907E64232DAFE7002B52D4 /* SoundPlayer.swift */; };
+		86907E67232DC63D002B52D4 /* AccessFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86907E66232DC63D002B52D4 /* AccessFeedback.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
 		86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */; };
 		86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC22318A6890042FA99 /* VendorCompany.swift */; };
@@ -77,8 +81,12 @@
 		866461A22323CB8F00051600 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		866461A42324715C00051600 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		866461A6232471B400051600 /* EntrantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantType.swift; sourceTree = "<group>"; };
-		8664B15B2315F7EF00654B61 /* TestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestManager.swift; sourceTree = "<group>"; };
 		86901F52231F2821001ECD69 /* InputValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
+		86907E5E232D17F7002B52D4 /* CheckPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointType.swift; sourceTree = "<group>"; };
+		86907E60232DAF7A002B52D4 /* AccessGranted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AccessGranted.wav; sourceTree = "<group>"; };
+		86907E62232DAF87002B52D4 /* AccessDenied.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AccessDenied.wav; sourceTree = "<group>"; };
+		86907E64232DAFE7002B52D4 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		86907E66232DC63D002B52D4 /* AccessFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessFeedback.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompanyDataSource.swift; sourceTree = "<group>"; };
 		86C26DC22318A6890042FA99 /* VendorCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompany.swift; sourceTree = "<group>"; };
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8626649223265F800076060F /* PassTesterViewController.swift */,
+				86907E64232DAFE7002B52D4 /* SoundPlayer.swift */,
 				860BDBCE232B137C0095C426 /* View */,
 			);
 			path = PassTesterController;
@@ -142,6 +151,8 @@
 				860BDBCD232B134A0095C426 /* PassTesterController */,
 				861D621622FBA22600C4CC26 /* Model */,
 				861B43A022EDB44600081CF7 /* Assets.xcassets */,
+				86907E60232DAF7A002B52D4 /* AccessGranted.wav */,
+				86907E62232DAF87002B52D4 /* AccessDenied.wav */,
 				861B43A222EDB44600081CF7 /* LaunchScreen.storyboard */,
 				861B43A522EDB44600081CF7 /* Info.plist */,
 			);
@@ -255,7 +266,6 @@
 			children = (
 				861B439B22EDB44400081CF7 /* ViewController.swift */,
 				863D9DB4231BF4F10060CB36 /* View */,
-				8664B15B2315F7EF00654B61 /* TestManager.swift */,
 			);
 			path = "Main Controller";
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				86BB27D6230D4BC200AF8802 /* Checkpoint.swift */,
+				86907E5E232D17F7002B52D4 /* CheckPointType.swift */,
+				86907E66232DC63D002B52D4 /* AccessFeedback.swift */,
 			);
 			path = Checkpoint;
 			sourceTree = "<group>";
@@ -338,8 +350,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86907E61232DAF7A002B52D4 /* AccessGranted.wav in Resources */,
 				861B43A422EDB44600081CF7 /* LaunchScreen.storyboard in Resources */,
 				861B43A122EDB44600081CF7 /* Assets.xcassets in Resources */,
+				86907E63232DAF87002B52D4 /* AccessDenied.wav in Resources */,
 				861B439F22EDB44400081CF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,11 +381,12 @@
 				861B439C22EDB44400081CF7 /* ViewController.swift in Sources */,
 				861D622F22FBA5F200C4CC26 /* VIPGuest.swift in Sources */,
 				861B439A22EDB44400081CF7 /* AppDelegate.swift in Sources */,
+				86907E5F232D17F7002B52D4 /* CheckPointType.swift in Sources */,
 				86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */,
 				86C26DC52318A6D40042FA99 /* Contractor.swift in Sources */,
 				861D622922FBA4DA00C4CC26 /* Entrant.swift in Sources */,
-				8664B15C2315F7EF00654B61 /* TestManager.swift in Sources */,
 				861D622B22FBA52300C4CC26 /* Area.swift in Sources */,
+				86907E65232DAFE7002B52D4 /* SoundPlayer.swift in Sources */,
 				86C26DC92318AAE60042FA99 /* SeasonPassGuest.swift in Sources */,
 				861D622322FBA40B00C4CC26 /* RideAccessType.swift in Sources */,
 				86C26DC72318A82D0042FA99 /* Vendor.swift in Sources */,
@@ -384,6 +399,7 @@
 				866461A32323CB8F00051600 /* Extensions.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,
+				86907E67232DC63D002B52D4 /* AccessFeedback.swift in Sources */,
 				86901F53231F2821001ECD69 /* InputValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
