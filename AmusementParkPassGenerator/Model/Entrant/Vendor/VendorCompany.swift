@@ -14,10 +14,12 @@ enum VendorCompany: String, CaseIterable {
     case fedex = "Fedex"
     case nwElectrical = "NW Electrical"
     
+    //To facilitate vendor company data displayed in the picker view's row
     static func allCasesAsStrings() -> [String] {
         return self.allCases.map {$0.rawValue}
     }
     
+    //Return the vendor company enum based on the picker's row
     static func vendorForRow(_ row: Int) -> VendorCompany? {
         switch row {
         case 0: return .acme

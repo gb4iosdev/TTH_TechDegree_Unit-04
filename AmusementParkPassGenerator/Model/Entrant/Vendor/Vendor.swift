@@ -15,6 +15,8 @@ class Vendor: Entrant {
     let visitDate: Date
     
     init(entrantInformation information: EntrantInformation) throws {
+        
+        //Validate entrant's information per business rules:
         guard information.firstName != nil, information.lastName != nil else {
             throw InformationError.missingNameInformation(detail: "Missing Name information for vendor")
         }
@@ -22,8 +24,13 @@ class Vendor: Entrant {
             throw InformationError.invalidVendorCompany(detail: "Vendor Company is not registered")
         }
         
+        //Set the information
         self.entrantInformation = information
+        
+        //Create the Pass
         self.pass = Pass(of: .vendorPass, to: accessAreas, rides: [.noRideAccess])
+        
+        //Set the visit date to current date/time
         self.visitDate = Date()
     }
 }

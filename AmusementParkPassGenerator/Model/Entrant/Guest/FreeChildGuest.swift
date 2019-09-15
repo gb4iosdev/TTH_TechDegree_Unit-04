@@ -18,6 +18,7 @@ class FreeChildGuest: Entrant {
     
     init(entrantInformation information: EntrantInformation) throws {
         
+        //Validate entrant's information per business rules:
         //Check entrant is less than or equal to 5 years old
         let currentDate = Date()
         let durationInSeconds = currentDate.timeIntervalSince(information.dateOfBirth)
@@ -27,8 +28,10 @@ class FreeChildGuest: Entrant {
             throw InformationError.incorrectAge(detail: "Child Entrant must be less than 5 years old")
         }
         
+        //Set the information
         self.entrantInformation = information
         
+        //Create the Pass
         self.pass = Pass(of: .freeChildGuestPass, to: [Area.amusement], rides: [.allRides])
     }
 }

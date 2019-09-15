@@ -13,6 +13,8 @@ class ClassicGuest: Entrant {
     var entrantInformation: EntrantInformation? = nil
     
     init() {
+        
+        //Create the Pass
         self.pass = Pass(of: .classicGuestPass, to: [Area.amusement],
                          rides: [.allRides])
     }

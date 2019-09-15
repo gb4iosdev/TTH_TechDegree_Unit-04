@@ -8,6 +8,7 @@
 
 import UIKit
 
+//Created to allow the entrant sub type to be saved with the button on dynamic sub type button creation
 class EntrantSubTypeButton: UIButton {
 
     var entrantSubType: EntrantSubType

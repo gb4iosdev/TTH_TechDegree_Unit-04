@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Enumeration to identify/name the button pressed.  Raw value maps to the button's tag
 enum TestButton: Int {
     case office = 30
     case kitchen

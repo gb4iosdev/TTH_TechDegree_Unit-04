@@ -31,6 +31,7 @@
 		86344B802318A54600A07184 /* ProjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86344B7F2318A54600A07184 /* ProjectDataSource.swift */; };
 		863D9DB6231BF51E0060CB36 /* EntrantSubTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */; };
 		863D9DB8231BF6FA0060CB36 /* EntrantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */; };
+		863F0447232E75B3008994CF /* AccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863F0446232E75B3008994CF /* AccessResponse.swift */; };
 		8655269F2327058900DFF66D /* PassType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655269E2327058900DFF66D /* PassType.swift */; };
 		866461A32323CB8F00051600 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A22323CB8F00051600 /* Extensions.swift */; };
 		866461A52324715C00051600 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866461A42324715C00051600 /* Field.swift */; };
@@ -40,7 +41,6 @@
 		86907E61232DAF7A002B52D4 /* AccessGranted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86907E60232DAF7A002B52D4 /* AccessGranted.wav */; };
 		86907E63232DAF87002B52D4 /* AccessDenied.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86907E62232DAF87002B52D4 /* AccessDenied.wav */; };
 		86907E65232DAFE7002B52D4 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86907E64232DAFE7002B52D4 /* SoundPlayer.swift */; };
-		86907E67232DC63D002B52D4 /* AccessFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86907E66232DC63D002B52D4 /* AccessFeedback.swift */; };
 		86BB27D7230D4BC200AF8802 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB27D6230D4BC200AF8802 /* Checkpoint.swift */; };
 		86C26DC12318A6480042FA99 /* VendorCompanyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */; };
 		86C26DC32318A6890042FA99 /* VendorCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C26DC22318A6890042FA99 /* VendorCompany.swift */; };
@@ -77,6 +77,7 @@
 		86344B7F2318A54600A07184 /* ProjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataSource.swift; sourceTree = "<group>"; };
 		863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubTypeButton.swift; sourceTree = "<group>"; };
 		863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantSubType.swift; sourceTree = "<group>"; };
+		863F0446232E75B3008994CF /* AccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessResponse.swift; sourceTree = "<group>"; };
 		8655269E2327058900DFF66D /* PassType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassType.swift; sourceTree = "<group>"; };
 		866461A22323CB8F00051600 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		866461A42324715C00051600 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		86907E60232DAF7A002B52D4 /* AccessGranted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AccessGranted.wav; sourceTree = "<group>"; };
 		86907E62232DAF87002B52D4 /* AccessDenied.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AccessDenied.wav; sourceTree = "<group>"; };
 		86907E64232DAFE7002B52D4 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		86907E66232DC63D002B52D4 /* AccessFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessFeedback.swift; sourceTree = "<group>"; };
 		86BB27D6230D4BC200AF8802 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		86C26DC02318A6480042FA99 /* VendorCompanyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompanyDataSource.swift; sourceTree = "<group>"; };
 		86C26DC22318A6890042FA99 /* VendorCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCompany.swift; sourceTree = "<group>"; };
@@ -274,8 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				863D9DB5231BF51E0060CB36 /* EntrantSubTypeButton.swift */,
-				863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */,
 				866461A6232471B400051600 /* EntrantType.swift */,
+				863D9DB7231BF6FA0060CB36 /* EntrantSubType.swift */,
 				866461A42324715C00051600 /* Field.swift */,
 				866461A22323CB8F00051600 /* Extensions.swift */,
 			);
@@ -286,8 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				86BB27D6230D4BC200AF8802 /* Checkpoint.swift */,
+				863F0446232E75B3008994CF /* AccessResponse.swift */,
 				86907E5E232D17F7002B52D4 /* CheckPointType.swift */,
-				86907E66232DC63D002B52D4 /* AccessFeedback.swift */,
 			);
 			path = Checkpoint;
 			sourceTree = "<group>";
@@ -386,6 +386,7 @@
 				86C26DC52318A6D40042FA99 /* Contractor.swift in Sources */,
 				861D622922FBA4DA00C4CC26 /* Entrant.swift in Sources */,
 				861D622B22FBA52300C4CC26 /* Area.swift in Sources */,
+				863F0447232E75B3008994CF /* AccessResponse.swift in Sources */,
 				86907E65232DAFE7002B52D4 /* SoundPlayer.swift in Sources */,
 				86C26DC92318AAE60042FA99 /* SeasonPassGuest.swift in Sources */,
 				861D622322FBA40B00C4CC26 /* RideAccessType.swift in Sources */,
@@ -399,7 +400,6 @@
 				866461A32323CB8F00051600 /* Extensions.swift in Sources */,
 				861D622D22FBA5B500C4CC26 /* ClassicGuest.swift in Sources */,
 				861D623722FBA6E200C4CC26 /* Manager.swift in Sources */,
-				86907E67232DC63D002B52D4 /* AccessFeedback.swift in Sources */,
 				86901F53231F2821001ECD69 /* InputValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

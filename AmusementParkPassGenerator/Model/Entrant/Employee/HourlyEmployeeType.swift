@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Hourly employee sub types
 enum HourlyEmployeeType {
     case foodServices
     case rideServices

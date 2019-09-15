@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let inputValidator = InputValidation()  //Manage Text Field validation
+    let inputValidator = InputValidation()  //Manage Text Field validation where required
     
     // MARK: - Outlets
     //Entrant Selection Buttons
@@ -72,15 +72,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurePickers()
-        configureTextFields()
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            self.entrantTypeButtons[0].isHidden = true
-//        }
-        
-        //testManager.runTests()
-        
+        configurePickers()      //Set up Picker mode, delegate, datasource
+        configureTextFields()   //Configure delegates and functions for keyboard interactions
     }
     
     @IBAction func entrantTypeSelected(_ sender: UIButton) {
@@ -98,6 +92,7 @@ class ViewController: UIViewController {
         //Set all information fields to not user enabled
         setFieldsUserEnabled(to: false, for: allFieldGroups)
         
+        //Display entrant sub type buttons based on entrant type selected
         if let entrantType = EntrantType(rawValue: sender.tag) {
             displayEntrantSubtypes(for: entrantType)
         }
@@ -105,50 +100,25 @@ class ViewController: UIViewController {
         //Disable Generate Pass & Populate Data buttons
         setFieldsUserEnabled(to: false, for: [generatePassButton, populateDataButton])
         
+        //Reset the currently active sub type
         self.currentEntrantSubType = nil
     }
     
     func displayEntrantSubtypes(for entrantType: EntrantType) {
         
-        guard let subTypeButtonTitles = entrantSubTypeButtonTitles(for: entrantType) else { return }
-        
-        for (buttonTitle, entrantSubType) in subTypeButtonTitles {
+        //Retrieve sub types for entrant type and display corresponding buttons in the sub type stackview.  Save entrant sub type with the button.
+        for entrantSubType in entrantType.subTypes() {
             let button = EntrantSubTypeButton(entrantSubType: entrantSubType)
             button.heightAnchor.constraint(equalToConstant: 55).isActive = true
-            button.setTitle(buttonTitle, for: .normal)
+            button.setTitle(entrantSubType.rawValue, for: .normal)
             button.backgroundColor = UIColor(red: 67/255, green: 53/255, blue: 82/255, alpha: 1.0)
             button.addTarget(self, action: #selector(ViewController.entrantSubTypeSelected(button:)), for: .touchUpInside)
             entrantSubTypeStackView.addArrangedSubview(button)
         }
     }
     
-    //Returns the button titles and associated entrant sub-type to allow buttons to be labelled and hold information about the entrant class to be later generated.
-    //Tuples array rather than dictionary to preserve order
-    func entrantSubTypeButtonTitles(for entrantType: EntrantType) -> [(String, EntrantSubType)]? {
-        switch entrantType {
-        case .guest: return [
-            ("Child", .childGuest),
-            ("Classic", .classicGuest),
-            ("Senior", .seniorGuest),
-            ("VIP", .vipGuest),
-            ("Senior Pass", .seasonPassGuest)]
-        case .employee: return [
-            ("Food Services", .hourlyEmployee_foodServices),
-            ("Ride Services", .hourlyEmployee_rideServices),
-            ("Maintenance", .hourlyEmployee_maintenance)]
-        case .manager: return [
-            ("Shift", .manager_shift),
-            ("Senior", .manager_senior),
-            ("General", .manager_general)]
-        case .contractor: return [
-            ("Contractor", .contractor)]
-        case .vendor: return [
-            ("Vendor", .vendor)]
-        }
-    }
-    
     @objc func entrantSubTypeSelected(button: EntrantSubTypeButton!) {
-        //Set font size to normal for all subtype buttons & disable all information fields
+        //Reset font size to normal for all subtype buttons & disable all information fields in preparation for highlighting appropriate button and fields.
         for view in entrantSubTypeStackView.arrangedSubviews {
             if let button = view as? EntrantSubTypeButton {
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
@@ -160,7 +130,7 @@ class ViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22.0)
         setFieldsUserEnabled(to: true, for: requiredFields(for: button.entrantSubType))
         
-        //Enable Generate Pass & Populate Data buttons (if at least one field active)
+        //Enable Generate Pass button & Populate Data button if at least one field active
         setFieldsUserEnabled(to: true, for: [generatePassButton])
         setFieldsUserEnabled(to: false, for: [populateDataButton])
         for field in allFields {
@@ -170,18 +140,19 @@ class ViewController: UIViewController {
             }
         }
         
+        //Save the sub type to the view controller, as current sub type.
         self.currentEntrantSubType = button.entrantSubType
     }
     
     @IBAction func generatePassbuttonPressed(_ sender: UIButton) {
         
-        //Generate the information object from enabled fields
+        //Generate the information object from enabled fields & ensure we have a current sub type
         let entrantInformation = generateInformationObject()
         guard let entrantSubType = currentEntrantSubType else { return }
         
+        //Create Entrant of sub type and with information, and present any initialiser errors in an alert:
         do {
             self.currentEntrant = try createEntrant(ofSubType : entrantSubType, with: entrantInformation)
-            dump(currentEntrant)
         }
         catch let error as InformationError {
             let alertController = UIAlertController(title: error.title(), message: error.message(), preferredStyle: .alert)
@@ -196,7 +167,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func populateDataButtonPressed(_ sender: UIButton) {
-        //Cycle through the fields and populate if userEnabled
+        //Cycle through the fields and populate test data if userEnabled
         for inputField in allFields {
             if inputField.isUserInteractionEnabled == true, let field = Field(rawValue: inputField.tag) {
                 setTestData(for: field)
@@ -204,6 +175,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Remove this class as observer on deinitialization
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -229,8 +201,11 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        //Check tag to ensure this is a recognizable field, else return 0 as number of rows
         guard let field = Field(rawValue: pickerView.tag) else { return 0 }
         
+        //Return number of data rows from class property counts for appropriate picker.
         switch field {
         case .project: return ProjectDataSource.projects.count
         case .company: return VendorCompany.allCases.count
@@ -240,8 +215,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
+        //Check tag to ensure this is a recognizable field, else return nil indicating no data
         guard let field = Field(rawValue: pickerView.tag) else { return nil }
         
+        //Return the data for the title of the requested row
         switch field {
         case .project: return String(ProjectDataSource.projects[row])
         case .company: return VendorCompany.allCasesAsStrings()[row]
@@ -254,6 +231,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ViewController: UITextFieldDelegate {
     
     func configureTextFields() {
+        //To restrict fields to digits and to a certain number.  See Input Validation Class.
         ssnTextField.delegate = self
         zipCodeTextField.delegate = self
         
@@ -263,21 +241,27 @@ extension ViewController: UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //Control validation for ssn and zipCode text fields.
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let textFieldLength = textField.text?.count ?? 0
         let fieldCharacterSet = CharacterSet(charactersIn: string)
         
+        //Acknowledgement - hackingwithswift.com
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
         switch textField {
-        case ssnTextField:  //Restrict to digits and 11 characters max (dashes to be stripped later)
-            return inputValidator.allowedSSNCharacters.isSuperset(of: fieldCharacterSet) && textFieldLength < inputValidator.ssnMaxLength
+        case ssnTextField:  //Restrict to digits and 9 characters max
+            return inputValidator.allowedSSNCharacters.isSuperset(of: fieldCharacterSet) && updatedText.count <= inputValidator.ssnMaxLength
         case zipCodeTextField:  //Restrict to digits and 5 characters max
-            return inputValidator.allowedZipCodeCharacters.isSuperset(of: fieldCharacterSet) && textFieldLength < inputValidator.zipCodeMaxLength
+            return inputValidator.allowedZipCodeCharacters.isSuperset(of: fieldCharacterSet) && updatedText.count <= inputValidator.zipCodeMaxLength
         default:
             return true
         }
     }
     
+    //Move main stackview up if lower fields selected for editing as they will conflict with the keyboard.
     @objc func keyboardWillShow(_ notification: Notification) {
         //Check if one of the lower fields is currently the first responder.
         if let currentActiveField = currentlyActiveTextField, currentActiveField.isFirstResponder {
@@ -294,6 +278,7 @@ extension ViewController: UITextFieldDelegate {
         }
     }
     
+    //Set as currently active text field if one of the lowest 3 fields.
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let field = Field(rawValue: textField.tag) {
             if [Field.city, Field.state, Field.zipCode].contains(field) {
@@ -302,14 +287,15 @@ extension ViewController: UITextFieldDelegate {
         }
     }
     
+    //Reset the currently active text filed to nil when finished editing the text field
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         currentlyActiveTextField = nil
         return true
     }
     
+    //Restore Main StackView constraints when keyboard hides.
     @objc func keyboardWillHide(_ notification: Notification) {
-        //Restore Main StackView constraints
         mainStackViewBottomConstraint.constant = 20
         mainStackViewTopConstraint.constant = 22
         UIView.animate(withDuration: 0.8) {
@@ -322,6 +308,7 @@ extension ViewController: UITextFieldDelegate {
 
 extension ViewController {
     
+    //Check to verify specific expected segue, get destination View Controller and set it's entrant.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createNewPassSegue", let createNewPassViewController = segue.destination as? PassTesterViewController, let entrant = currentEntrant {
             createNewPassViewController.entrant = entrant
@@ -347,7 +334,10 @@ extension ViewController {
     
     // Return the fields to be enabled given the entrant sub type button selected
     func requiredFields(for subType: EntrantSubType) -> [UIView] {
+        //Base field groups simply lists common base fields - to avoid too much duplication in the switch.
         let baseFieldGroups: [UIView] = [firstNameGroup, lastNameGroup, streetAddressGroup, cityGroup, stateGroup, zipCodeGroup, datePickerGroup]
+        
+        //Add or specify specific required fields basted on the sub type.
         switch subType {
         case .classicGuest, .vipGuest:
             return []
@@ -366,8 +356,9 @@ extension ViewController {
         }
     }
     
-    func setTestData(for field: Field) {
-        switch field {
+    // Set test data for a particular information field - called only if that field is active according to the sub type chosen.
+    func setTestData(for activField: Field) {
+        switch activField {
         case .dateOfBirth:      datePicker.setTestData()
         case .ssn:              ssnTextField.text = "123456789"
         case .firstName:        firstNameTextField.text = "Jamie"
@@ -391,7 +382,7 @@ extension ViewController {
         if selectedEntrantSubType == .classicGuest || selectedEntrantSubType == .vipGuest { return nil }
         
         
-        //Should have a date
+        //Should always have a date
         let dateOfBirth = datePicker.date
         var ssn: Int? {
             if let ssnText = self.getTextFieldValueIfEnabled(field: self.ssnTextField) {
@@ -417,6 +408,7 @@ extension ViewController {
         }
         let company = companyPicker.isUserInteractionEnabled ? VendorCompany.vendorForRow(companyPicker.selectedRow(inComponent: 0))  : nil
         
+        //Create & return the entrant information object
         return EntrantInformation(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, socialSecurityNumber: ssn, projectNumber: projectNumber, company: company, dateOfBirth: dateOfBirth)
     }
     
@@ -425,9 +417,11 @@ extension ViewController {
         return field.isUserInteractionEnabled && field.text != "" ? field.text : nil
     }
     
+    //Create correct entrant basted on sub type and with information if required, and propogate error if information is missing.
     func createEntrant(ofSubType subType: EntrantSubType, with entrantInformation: EntrantInformation?) throws -> Entrant {
         let entrant: Entrant
         
+        //This section deals with creation of entrants requiring entrant information
         if let information = entrantInformation {
             switch subType {
             case .childGuest:
@@ -454,7 +448,6 @@ extension ViewController {
                 entrant = try Vendor(entrantInformation: information)
             default: fatalError("Entrant subType not found for non-nil information")
             }
-
         } else {    //Should only be nil for classic and vip guests
             switch subType {
             case .classicGuest:

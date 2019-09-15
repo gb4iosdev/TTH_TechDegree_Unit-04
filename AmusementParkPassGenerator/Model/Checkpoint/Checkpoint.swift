@@ -19,9 +19,9 @@ class Checkpoint {
         self.checkpointType = type
     }
     
-    convenience init(ofType: CheckpointType, inArea: Area? = nil) {
+    convenience init(ofType: CheckpointType, in area: Area? = nil) {
         self.init(checkpointType: ofType)
-        self.area = inArea
+        self.area = area
 
     }
     
@@ -40,6 +40,7 @@ class Checkpoint {
     
     private func accessPermitted(for pass: Pass) -> Bool {
         
+        //return true if the checkpoint has an area and it's in the pass's allowable areas
         if self.checkpointType == .areaAccess, let area = self.area {
             return pass.areaAccess.contains(area)
         } else {
@@ -47,33 +48,18 @@ class Checkpoint {
         }
     }
     
-    func checkAreaAccess(_ pass: Pass) -> AccessFeedBack {
+    func checkAreaAccess(_ pass: Pass) -> AccessResponse {
         
+        //Check swipe frequency
         guard swipeAllowed(for: pass) else {
-            return AccessFeedBack(accessFeedback: "Can’t use the same pass within \(minimumSwipeInterval) seconds", accessIsGranted: false)
+            return AccessResponse(accessResponseMessage: "Can’t use the same pass within \(minimumSwipeInterval) seconds", accessIsGranted: false)
         }
         
+        //Check access permission
         if accessPermitted(for: pass), let area = self.area?.rawValue {
-            return AccessFeedBack(accessFeedback: "Pass provides access to the \(area)", accessIsGranted: true)
+            return AccessResponse(accessResponseMessage: "Pass provides access to the \(area)", accessIsGranted: true)
         } else {
-            return AccessFeedBack(accessFeedback: "No access provided", accessIsGranted: false)
+            return AccessResponse(accessResponseMessage: "No access provided", accessIsGranted: false)
         }
-            
-//        case .ride:             //Print ride access types:
-//            print("Entrant has the following ride access:\n")
-//            for rideAccessType in pass.rideAccess {
-//                print(rideAccessType)
-//            }
-//
-//        case .register:     //Print discounts
-//            if let discounts = pass.discounts {
-//                print("Entrant is eligible for the following discounts\n")
-//                for (discount, value) in discounts {
-//                    print("\(discount.rawValue) is: \(value)%")
-//                }
-//            } else {
-//                print("Entrant is not eligible for any discounts")
-//            }
-//        }
     }
 }

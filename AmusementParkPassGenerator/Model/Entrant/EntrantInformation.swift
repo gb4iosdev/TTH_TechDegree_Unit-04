@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Captures optional and required data for entrants
 struct EntrantInformation {
     let firstName: String?
     let lastName: String?
@@ -20,7 +21,8 @@ struct EntrantInformation {
     let company: VendorCompany?
     let dateOfBirth: Date
     
-    var formattedNameForTextField: String? {
+    //Return full name for the Pass on PassTesterViewController
+    var formattedFullName: String? {
         if let first = firstName, let last = lastName {
             return first + " " + last
         } else {

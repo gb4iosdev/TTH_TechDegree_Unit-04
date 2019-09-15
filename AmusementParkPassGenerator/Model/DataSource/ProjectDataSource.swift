@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Project listing for the contractor
 struct ProjectDataSource {
     static let projects: [Int] = [
         1001,
@@ -16,6 +17,8 @@ struct ProjectDataSource {
         2001,
         2002
     ]
+    
+    //Project access areas per business rules
     static let accessAreas: [Int : Set<Area>] = [
         1001: [.amusement, .rideControl],
         1002: [.amusement, .rideControl, .maintenance],

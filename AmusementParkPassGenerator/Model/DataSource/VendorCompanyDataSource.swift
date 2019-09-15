@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Vendor company access areas per business rules:
 struct VendorCompanyDataSource {
     static let accessAreas: [VendorCompany : Set<Area>] = [
         .acme : [.kitchen],

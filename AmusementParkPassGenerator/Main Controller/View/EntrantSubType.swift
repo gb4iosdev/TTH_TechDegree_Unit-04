@@ -8,18 +8,19 @@
 
 import Foundation
 
-enum EntrantSubType {
-    case childGuest
-    case classicGuest
-    case seniorGuest
-    case vipGuest
-    case seasonPassGuest
-    case hourlyEmployee_foodServices
-    case hourlyEmployee_rideServices
-    case hourlyEmployee_maintenance
-    case manager_shift
-    case manager_senior
-    case manager_general
-    case contractor
-    case vendor
+//Entrant sub types and their button titles
+enum EntrantSubType: String {
+    case childGuest = "Child"
+    case classicGuest = "Classic"
+    case seniorGuest = "Senior"
+    case vipGuest = "VIP"
+    case seasonPassGuest = "Season Pass"
+    case hourlyEmployee_foodServices = "Food Services"
+    case hourlyEmployee_rideServices = "Ride Services"
+    case hourlyEmployee_maintenance = "Maintenance"
+    case manager_shift = "Shift"
+    case manager_senior = "Senior "
+    case manager_general = "General"
+    case contractor = "Contractor"
+    case vendor = "Vendor"
 }

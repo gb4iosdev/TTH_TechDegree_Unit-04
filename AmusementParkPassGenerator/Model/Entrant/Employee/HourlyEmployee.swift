@@ -14,6 +14,8 @@ class HourlyEmployee: Entrant {
     let pass: Pass
     
     init(ofType type: HourlyEmployeeType, entrantInformation information: EntrantInformation) throws {
+        
+        //Validate entrant's information per business rules:
         guard information.firstName != nil, information.lastName != nil else {
             throw InformationError.missingNameInformation(detail: "Missing Name information on Hourly Employee")
         }
@@ -24,8 +26,10 @@ class HourlyEmployee: Entrant {
             throw InformationError.missingSocialSecurityNumber(detail: "Missing Social Security Number on Hourly Employee")
         }
         
+        //Set the information
         self.entrantInformation = information
         
+        //Create Area access information based on the hourly empoloyee's sub type.
         var accessAreas: Set<Area> {
             switch type {
             case .foodServices: return [.amusement, .kitchen]
@@ -34,6 +38,7 @@ class HourlyEmployee: Entrant {
             }
         }
         
+        //Create the Pass
         self.pass = Pass(of: .hourlyEmployeePass, to: accessAreas, rides: [.allRides],
                          discounts: [.food :15, .merchandise :25])
     }

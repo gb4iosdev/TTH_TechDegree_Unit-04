@@ -8,6 +8,7 @@
 
 import Foundation
 
+//To track information fields rather than using just the tag.  Tag is enum raw value.
 enum Field: Int {
     case dateOfBirth = 10
     case ssn

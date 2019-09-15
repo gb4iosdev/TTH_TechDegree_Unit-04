@@ -14,11 +14,15 @@ class SeniorGuest: Entrant {
     let pass: Pass
     
     init(entrantInformation information: EntrantInformation) throws {
+        //Validate entrant's information per business rules
         guard information.firstName != nil, information.lastName != nil else {
             throw InformationError.missingNameInformation(detail: "Missing Name information for Senior Guest")
         }
         
+        //Set the information
         self.entrantInformation = information
+        
+        //Create the Pass
         self.pass = Pass(of: .seniorGuestPass, to: [.amusement], rides: [.allRides, . skipLines], discounts: [.food : 10, .merchandise : 10])
     }
 }

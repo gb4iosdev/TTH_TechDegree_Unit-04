@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Manager sub types
 enum ManagementTier {
     case shiftManager
     case generalManager

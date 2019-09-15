@@ -14,19 +14,21 @@ protocol Entrant {
 }
 
 extension Entrant {
-    func swipe(at checkpoint: Checkpoint) -> AccessFeedBack {
-        var feedback = checkpoint.checkAreaAccess(self.pass)
+    //Check area access at the checkpoint and return the response (AccessResponse).  Also check for entrant's birthday.
+    func swipe(at checkpoint: Checkpoint) -> AccessResponse {
+        var response = checkpoint.checkAreaAccess(self.pass)
         if let birthDayMessage = checkForBirthday() {
-            feedback.accessFeedback += "\n" + birthDayMessage
+            response.accessResponseMessage += "\n\n" + birthDayMessage
         }
-        return feedback
+        return response
     }
+    
     
     func checkForBirthday() -> String? {
         
         guard let entrantBirthdate = entrantInformation?.dateOfBirth else { return nil }
         
-        //Celebrate birthday:
+        //Set date format to month & day only in order to check for birthday
         let format = DateFormatter()
         format.dateFormat = "MM-dd"
         let formattedToday = format.string(from: Date())

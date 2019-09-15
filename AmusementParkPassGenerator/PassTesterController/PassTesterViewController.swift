@@ -10,26 +10,25 @@ import UIKit
 
 class PassTesterViewController: UIViewController {
     
+    //General variable declarations
     var entrant: Entrant?
-    //var currentCheckPoint: Checkpoint?
     var soundPlayer = SoundPlayer()
     
-    
+    //MARK: Outlet Variables
     @IBOutlet weak var passNameLabel: UILabel!
     @IBOutlet weak var passTypeLabel: UILabel!
     @IBOutlet weak var passDetailLabel: UILabel!
-    
     
     @IBOutlet var testButtons: [UIButton]!
     
     @IBOutlet weak var testResultsLabel: UILabel!
     
     //Setup all checkpoints
-    let office = Checkpoint(ofType: .areaAccess, inArea: .office)
-    let kitchen = Checkpoint(ofType: .areaAccess, inArea: .kitchen)
-    let rideControl = Checkpoint(ofType: .areaAccess, inArea: .rideControl)
-    let amusement = Checkpoint(ofType: .areaAccess, inArea: .amusement)
-    let maintenance = Checkpoint(ofType: .areaAccess, inArea: .maintenance)
+    let office = Checkpoint(ofType: .areaAccess, in: .office)
+    let kitchen = Checkpoint(ofType: .areaAccess, in: .kitchen)
+    let rideControl = Checkpoint(ofType: .areaAccess, in: .rideControl)
+    let amusement = Checkpoint(ofType: .areaAccess, in: .amusement)
+    let maintenance = Checkpoint(ofType: .areaAccess, in: .maintenance)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +37,9 @@ class PassTesterViewController: UIViewController {
         soundPlayer.loadAccessSounds()
         
         //Populate the Pass if entrant information exists:
-        
         //Entrant Name:
         if let currentEntrantInformation = entrant?.entrantInformation {
-            passNameLabel.text = currentEntrantInformation.formattedNameForTextField
+            passNameLabel.text = currentEntrantInformation.formattedFullName
             
         }
         //Pass Type and benefits:
@@ -53,28 +51,31 @@ class PassTesterViewController: UIViewController {
     
     @IBAction func testButtonPressed(_ sender: UIButton) {
         
+        //Check that button pressed is from the group expected - see TestButton enumeration
         guard let buttonPressed = TestButton(rawValue: sender.tag) else { return }
         
+        //Ensure the entrant variable is set
         guard let entrant = self.entrant else { return }
         
         var accessIsGranted: Bool
         
+        //Test the entrant's pass swipe at the checkpoint per the button pressed, or the pass directly for discount and ride access information.
         switch buttonPressed {
         case .office:
             let swipeResult = entrant.swipe(at: office)
-            testResultsLabel.text = swipeResult.accessFeedback
+            testResultsLabel.text = swipeResult.accessResponseMessage
             accessIsGranted = swipeResult.accessIsGranted
         case .kitchen:
             let swipeResult = entrant.swipe(at: kitchen)
-            testResultsLabel.text = swipeResult.accessFeedback
+            testResultsLabel.text = swipeResult.accessResponseMessage
             accessIsGranted = swipeResult.accessIsGranted
         case .rideControl:
             let swipeResult = entrant.swipe(at: rideControl)
-            testResultsLabel.text = swipeResult.accessFeedback
+            testResultsLabel.text = swipeResult.accessResponseMessage
             accessIsGranted = swipeResult.accessIsGranted
         case .amusement:
             let swipeResult = entrant.swipe(at: amusement)
-            testResultsLabel.text = swipeResult.accessFeedback
+            testResultsLabel.text = swipeResult.accessResponseMessage
             accessIsGranted = swipeResult.accessIsGranted
         case .rides:
             accessIsGranted = entrant.pass.hasRideAccess
@@ -87,7 +88,7 @@ class PassTesterViewController: UIViewController {
             testResultsLabel.text = entrant.pass.formattedDiscount(for: .merchandise)
         case .maintenance:
             let swipeResult = entrant.swipe(at: maintenance)
-            testResultsLabel.text = swipeResult.accessFeedback
+            testResultsLabel.text = swipeResult.accessResponseMessage
             accessIsGranted = swipeResult.accessIsGranted
         }
         

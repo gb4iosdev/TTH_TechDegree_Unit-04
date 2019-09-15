@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Types of information errors caused by missing information during entrant instantiation.
 enum InformationError: Error {
     case incorrectAge(detail: String)
     case missingNameInformation(detail: String)
@@ -16,6 +17,7 @@ enum InformationError: Error {
     case invalidProject(detail: String)
     case invalidVendorCompany(detail: String)
     
+    //Titles required for the alert
     func title() -> String {
         switch self {
         case .incorrectAge: return "Incorrect Age"
@@ -27,6 +29,7 @@ enum InformationError: Error {
         }
     }
     
+    //Return error detail for the alert
     func message() -> String {
         switch self {
         case .incorrectAge(let errorDetail): return errorDetail

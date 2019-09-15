@@ -16,6 +16,8 @@ class Manager: Entrant {
     var managementTier: ManagementTier
     
     init(entrantInformation information: EntrantInformation, managementTier tier: ManagementTier) throws {
+        
+        //Validate entrant's information per business rules:
         guard information.firstName != nil, information.lastName != nil else {
             throw InformationError.missingNameInformation(detail: "Missing Name information on Manager")
         }
@@ -26,9 +28,11 @@ class Manager: Entrant {
             throw InformationError.missingSocialSecurityNumber(detail: "Missing Social Security Number on Manager")
         }
         
+        //Set the information & management tier
         self.entrantInformation = information
         self.managementTier = tier
         
+        //Create the Pass
         self.pass = Pass(of: .managerPass, to: Set(Area.allCases),
                          rides: [.allRides], discounts: [.food : 25, .merchandise : 25])
     }

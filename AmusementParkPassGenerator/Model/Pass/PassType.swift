@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Define pass type for description of Pass on PassTesterViewController
 enum PassType: String {
     case freeChildGuestPass = "Free Child Guest Pass"
     case vipGuestPass = "VIP Guest Pass"

@@ -721,7 +721,7 @@ Pass Detail Line 4</string>
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXE-K2-KxB" userLabel="Test ResultsLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select button above to test the Pass" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXE-K2-KxB" userLabel="Test ResultsLabel">
                                         <rect key="frame" x="0.0" y="204" width="710" height="200"/>
                                         <color key="backgroundColor" red="0.68652552369999997" green="0.67004287240000004" blue="0.69887697699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

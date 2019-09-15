@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Area the checkpoint is located in
 enum Area: String, CaseIterable {
     case amusement = "Amusement Area"
     case kitchen = "Kitchen"
