@@ -12,6 +12,8 @@ Inheritance, Protocols, Protocol Composition, Enumerations, Optionals, Error Han
 N/A
 
 
+# Team Treehouse TechDegree Project 5
+
 ## Amusement Park Pass Generator: Part II
 
 **App Description:**  Amusement Park Pass App for iPad – UI Implementation.  User selects an entrant type, populates detailed entrant data, generates an amusement park pass and tests it for park area access and discounts.
