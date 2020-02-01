@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen1Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="xK1-dy-w1o">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="BvM-SK-UIz" userLabel="Main StackView">
-                                <rect key="frame" x="35" y="167" width="698" height="683.5"/>
+                                <rect key="frame" x="35" y="147" width="698" height="683.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iTQ-t6-G0H" userLabel="Line 1 StackView">
                                         <rect key="frame" x="0.0" y="0.0" width="698" height="92.5"/>
@@ -42,9 +40,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="PCG-GP-cah"/>
                                                         </constraints>
-                                                        <date key="date" timeIntervalSinceReferenceDate="589064727.95658505">
-                                                            <!--2019-09-01 21:05:27 +0000-->
-                                                        </date>
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
@@ -62,7 +57,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="mCv-Jm-nlz"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                     </textField>
@@ -87,7 +81,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="X8R-Jl-xdf"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -107,7 +100,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="hyI-jt-SDN"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -170,7 +162,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="k4T-yW-Akf"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -193,7 +184,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="Nra-k5-PHP"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -216,7 +206,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="goq-8j-mLd"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -239,7 +228,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="55" id="GJO-zt-lPD"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
@@ -256,7 +244,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j8q-Ch-kk9" userLabel="EntrantType">
-                                <rect key="frame" x="8" y="20" width="752" height="70"/>
+                                <rect key="frame" x="8" y="0.0" width="752" height="70"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6Y-le-Z3C">
                                         <rect key="frame" x="0.0" y="0.0" width="150.5" height="70"/>
@@ -319,7 +307,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Q66-3g-H4Y" userLabel="EntrantSubType">
-                                <rect key="frame" x="8" y="90" width="752" height="55"/>
+                                <rect key="frame" x="8" y="70" width="752" height="55"/>
                                 <color key="backgroundColor" red="1" green="0.98538764940000001" blue="0.052803751849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="TNB-uZ-jab"/>
@@ -454,14 +442,11 @@
             <objects>
                 <viewController id="MQX-pS-sjl" customClass="PassTesterViewController" customModule="AmusementParkPassGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9F-IU-8IE">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="984"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen2Mockup" translatesAutoresizingMaskIntoConstraints="NO" id="9s8-SD-Ncu">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Pass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUk-Ke-pGz" userLabel="CreateNewPassHeaderLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="712" height="70"/>
                                 <color key="backgroundColor" red="0.344119966" green="0.58548295500000003" blue="0.56190145020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="J0J-xl-ocA"/>
@@ -471,7 +456,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teb-rM-Qot" userLabel="Create New Pass Button">
-                                <rect key="frame" x="259" y="919" width="250" height="60"/>
+                                <rect key="frame" x="231" y="919" width="250" height="60"/>
                                 <color key="backgroundColor" red="0.344119966" green="0.58548295500000003" blue="0.56190145020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="V0p-U8-dXr"/>
@@ -491,14 +476,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pass" translatesAutoresizingMaskIntoConstraints="NO" id="GpY-GA-qsZ">
-                                <rect key="frame" x="29" y="100" width="710" height="350"/>
+                                <rect key="frame" x="1" y="100" width="710" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="8jh-ZP-1py"/>
                                     <constraint firstAttribute="width" constant="710" id="WZv-kd-0gA"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Bt7-jp-FU4" userLabel="Pass Content Stack View">
-                                <rect key="frame" x="135" y="186" width="498" height="178"/>
+                                <rect key="frame" x="107" y="186" width="498" height="178"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FaceImageAsset" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-E2-Csw">
                                         <rect key="frame" x="0.0" y="0.0" width="224" height="178"/>
@@ -535,10 +520,10 @@ Pass Detail Line 4</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="XVi-oj-M65" userLabel="Lower Section Stack View">
-                                <rect key="frame" x="29" y="485" width="710" height="404"/>
+                                <rect key="frame" x="1" y="485" width="710" height="404"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a8v-g7-LHE" userLabel="Central Label Stack View">
-                                        <rect key="frame" x="8.5" y="0.0" width="693.5" height="58"/>
+                                        <rect key="frame" x="8.5" y="0.0" width="693" height="58"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access &amp; Benefits Testing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDV-Xf-v2d">
                                                 <rect key="frame" x="205.5" y="0.0" width="282.5" height="29"/>
@@ -547,7 +532,7 @@ Pass Detail Line 4</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm the pass has the expected level of access when swiped at the checkpoint." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rU-20-M1O">
-                                                <rect key="frame" x="0.0" y="29" width="693.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="29" width="693" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
@@ -742,19 +727,15 @@ Pass Detail Line 4</string>
                             <constraint firstItem="XVi-oj-M65" firstAttribute="trailing" secondItem="GpY-GA-qsZ" secondAttribute="trailing" id="0r2-AY-Oae"/>
                             <constraint firstItem="hFc-ga-YBz" firstAttribute="trailing" secondItem="dUk-Ke-pGz" secondAttribute="trailing" id="1PO-Sc-CDK"/>
                             <constraint firstItem="GpY-GA-qsZ" firstAttribute="centerX" secondItem="h9F-IU-8IE" secondAttribute="centerX" id="EDZ-1l-fQv"/>
-                            <constraint firstItem="9s8-SD-Ncu" firstAttribute="leading" secondItem="h9F-IU-8IE" secondAttribute="leading" id="G87-o9-VFU"/>
                             <constraint firstItem="dUk-Ke-pGz" firstAttribute="centerX" secondItem="h9F-IU-8IE" secondAttribute="centerX" id="IFI-Ei-gD4"/>
                             <constraint firstItem="XVi-oj-M65" firstAttribute="leading" secondItem="GpY-GA-qsZ" secondAttribute="leading" id="Irc-r9-cJB"/>
                             <constraint firstItem="GpY-GA-qsZ" firstAttribute="top" secondItem="dUk-Ke-pGz" secondAttribute="bottom" constant="30" id="NZo-MV-3IH"/>
-                            <constraint firstItem="9s8-SD-Ncu" firstAttribute="trailing" secondItem="h9F-IU-8IE" secondAttribute="trailing" id="TYb-R3-e6L"/>
                             <constraint firstItem="Bt7-jp-FU4" firstAttribute="centerX" secondItem="GpY-GA-qsZ" secondAttribute="centerX" id="VWT-55-EWk"/>
                             <constraint firstItem="Bt7-jp-FU4" firstAttribute="centerY" secondItem="GpY-GA-qsZ" secondAttribute="centerY" id="WV6-Ye-M1r"/>
+                            <constraint firstItem="Teb-rM-Qot" firstAttribute="centerX" secondItem="hFc-ga-YBz" secondAttribute="centerX" id="aI1-3R-Yfd"/>
                             <constraint firstItem="dUk-Ke-pGz" firstAttribute="leading" secondItem="hFc-ga-YBz" secondAttribute="leading" id="bUe-wc-fC3"/>
                             <constraint firstItem="XVi-oj-M65" firstAttribute="top" secondItem="GpY-GA-qsZ" secondAttribute="bottom" constant="35" id="c7B-Mc-hXX"/>
-                            <constraint firstItem="Teb-rM-Qot" firstAttribute="centerX" secondItem="h9F-IU-8IE" secondAttribute="centerX" id="euZ-jW-Dd5"/>
-                            <constraint firstItem="9s8-SD-Ncu" firstAttribute="top" secondItem="h9F-IU-8IE" secondAttribute="top" id="gHc-gY-1on"/>
                             <constraint firstItem="dUk-Ke-pGz" firstAttribute="top" secondItem="h9F-IU-8IE" secondAttribute="top" id="jfI-P8-Rot"/>
-                            <constraint firstItem="hFc-ga-YBz" firstAttribute="bottom" secondItem="9s8-SD-Ncu" secondAttribute="bottom" id="mtP-H2-Eck"/>
                             <constraint firstItem="Teb-rM-Qot" firstAttribute="top" secondItem="XVi-oj-M65" secondAttribute="bottom" constant="30" id="w5g-FL-5RB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hFc-ga-YBz"/>
@@ -783,6 +764,5 @@ Pass Detail Line 4</string>
         <image name="FaceImageAsset" width="102" height="99"/>
         <image name="Pass" width="1065" height="525"/>
         <image name="Screen1Mockup" width="384" height="512"/>
-        <image name="Screen2Mockup" width="384" height="512"/>
     </resources>
 </document>

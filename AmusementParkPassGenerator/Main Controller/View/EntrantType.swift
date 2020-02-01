@@ -40,3 +40,8 @@ enum EntrantType: Int {
         }
     }
 }
+
+//enum Guest: EntrantType {
+//    case childguest
+//    case classicguest
+//}
